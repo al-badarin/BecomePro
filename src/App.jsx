@@ -153,7 +153,6 @@ function App() {
           </ol>
         </div>
       </section>
-
       <AboutUs/>
 
       <Trainers/>
