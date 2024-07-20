@@ -8,8 +8,9 @@ import Trainers from './components/trainers/Trainers';
 import Contact from './components/contact/Contact';
 // import Health from "./components/Health";
 // import Info from "./components/Info";
-// import Login from './components/login/Login';
+import Login from './components/login/Login';
 import Footer from './components/footer/Footer';
+import Register from './components/register/Register';
 
 const App = () => {
   return (
@@ -178,12 +179,8 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/register" component={Register} />
-          <Route path="/articles" exact component={Articles} />
-          <Route path="/articles/:id" component={ArticleDetails} />
-          <Route path="/training-programs" exact component={TrainingPrograms} />
-          <Route path="/training-programs/:id" component={TrainingProgramDetails} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
 
