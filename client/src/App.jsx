@@ -4,13 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import AboutUs from './components/about-us/AboutUs';
+import Trainers from './components/trainers/Trainers';
 import Contact from './components/contact/Contact';
 // import Health from "./components/Health";
-// import Trainers from "./components/Trainers";
-// import Contact from "./components/Contact";
 // import Info from "./components/Info";
 // import Login from './components/login/Login';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   return (
@@ -177,6 +176,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" component={Register} />

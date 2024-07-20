@@ -6,13 +6,17 @@ export default function Trainers() {
           <h2>Our Coaches</h2>
         </div>
         <div className="row">
+          {/* DIMITAR */}
           <div className="col-lg-4 col-md-6 mx-auto">
             <div className="box">
               <div className="name">
                 <h5>Dimitar Ivanov</h5>
               </div>
               <div className="img-box">
-                <img src="images/mitko_cska.jpg" alt="Trainer Photo - Dimitar" />
+                <img
+                  src="images/mitko_cska.jpg"
+                  alt="Trainer Photo - Dimitar"
+                />
               </div>
               <div className="social_box">
                 <a href="">
@@ -28,13 +32,17 @@ export default function Trainers() {
             </div>
           </div>
 
+          {/* JAMAL */}
           <div className="col-lg-4 col-md-6 mx-auto">
             <div className="box">
               <div className="name">
                 <h5>Jamal Al Badarin</h5>
               </div>
               <div className="img-box">
-                <img src="images/jim-point-up.jpg" alt="Trainer Photo - Jamal" />
+                <img
+                  src="images/jim-point-up.jpg"
+                  alt="Trainer Photo - Jamal"
+                />
               </div>
               <div className="social_box">
                 <a href="">
@@ -49,13 +57,18 @@ export default function Trainers() {
               </div>
             </div>
           </div>
+
+          {/* YORDAN */}
           <div className="col-lg-4 col-md-6 mx-auto">
             <div className="box">
               <div className="name">
                 <h5>Yordan Zhelev</h5>
               </div>
               <div className="img-box">
-                <img src="images/dancho-official.jpg" alt="Trainer Photo - Yordan" />
+                <img
+                  src="images/dancho-official.jpg"
+                  alt="Trainer Photo - Yordan"
+                />
               </div>
               <div className="social_box">
                 <a href="">
