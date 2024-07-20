@@ -1,38 +1,44 @@
+import { Link } from 'react-router-dom';
+
 export default function Info() {
+  // TODO: add paths to LINKS
+
   return (
     <section className="info_section layout_padding2">
       <div className="container">
         <div className="info_items">
-          <a href="">
+          <Link to="">
             <div className="item ">
               <div className="img-box box-1">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>Location</p>
+                <p>Bulgaria</p>
               </div>
             </div>
-          </a>
-          <a href="">
+          </Link>
+
+          <Link to="">
             <div className="item ">
               <div className="img-box box-2">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>+02 1234567890</p>
+                <p>+359 888881476</p>
               </div>
             </div>
-          </a>
-          <a href="">
+          </Link>
+
+          <Link to="">
             <div className="item ">
               <div className="img-box box-3">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>demo@gmail.com</p>
+                <p>become.pro2024@gmail.com</p>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
