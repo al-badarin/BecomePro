@@ -1,11 +1,13 @@
-export default function Health() {
+import { Link } from 'react-router-dom';
+
+export default function ArticleItem() {
   return (
     <section className="heathy_section layout_padding">
       <div className="container">
         <div className="row">
           <div className="col-md-12 mx-auto">
             <div className="detail-box">
-              <h2>HEALTHY MIND, HEALTHY BODY</h2>
+              <h2>ARTICLE'S TITLE</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -19,7 +21,7 @@ export default function Health() {
                 reprehenderit in voluptate velit esse cillum
               </p>
               <div className="btn-box">
-                <a href="">READ MORE</a>
+                <Link to="">READ MORE</Link>
               </div>
             </div>
           </div>
