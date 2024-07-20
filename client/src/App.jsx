@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Home from './components/home/Home';
-import AboutUs from './components/AboutUs';
+import AboutUs from './components/about-us/AboutUs';
+import Contact from './components/contact/Contact';
 // import Health from "./components/Health";
 // import Trainers from "./components/Trainers";
 // import Contact from "./components/Contact";
@@ -176,6 +177,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" component={Register} />
           <Route path="/articles" exact component={Articles} />
