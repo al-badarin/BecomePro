@@ -1,5 +1,3 @@
-import Info from './info/Info';
-
 export default function Contact() {
   return (
     <>
@@ -42,8 +40,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <Info />
     </>
   );
 }
