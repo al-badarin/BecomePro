@@ -40,7 +40,7 @@ export default function Hero() {
 
                 {/* TRAINERS */}
                 <li className="nav-item">
-                  <Link className="nav-link" to="trainer.html">
+                  <Link className="nav-link" to="/trainers">
                     Trainers
                   </Link>
                 </li>
@@ -49,6 +49,27 @@ export default function Hero() {
                 <li className="nav-item">
                   <Link className="nav-link" to="/contact">
                     Contact Us
+                  </Link>
+                </li>
+
+                {/* LOGIN */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+
+                {/* REGISTER */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+
+                  {/* LOGOUT */}
+                  <li className="nav-item">
+                  <Link className="nav-link" to="/logout">
+                    Logout
                   </Link>
                 </li>
               </ul>
