@@ -2,14 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
-// import AboutUs from "./components/AboutUs";
+import Home from './components/home/Home';
+import AboutUs from './components/AboutUs';
 // import Health from "./components/Health";
 // import Trainers from "./components/Trainers";
 // import Contact from "./components/Contact";
 // import Info from "./components/Info";
-import Footer from './components/Footer';
-import Home from './components/home/Home';
 // import Login from './components/login/Login';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -175,6 +175,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" component={Register} />
           <Route path="/articles" exact component={Articles} />

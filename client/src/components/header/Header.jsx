@@ -29,20 +29,17 @@ export default function Hero() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="why.html">
-                    {' '}
-                    Why us{' '}
+                  <Link className="nav-link" to="/about">
+                    Why us
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="trainer.html">
-                    {' '}
                     trainers
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="contact.html">
-                    {' '}
                     Contact Us
                   </Link>
                 </li>
