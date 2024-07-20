@@ -34,7 +34,7 @@ export default function Trainers() {
                 <h5>Jamal Al Badarin</h5>
               </div>
               <div className="img-box">
-                <img src="images/jim-ball-up.JPEG" alt="Trainer Photo - Jamal" />
+                <img src="images/jim-point-up.jpg" alt="Trainer Photo - Jamal" />
               </div>
               <div className="social_box">
                 <a href="">
