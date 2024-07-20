@@ -31,6 +31,13 @@ export default function Hero() {
                   </Link>
                 </li>
 
+                 {/* ARTICLES */}
+                 <li className="nav-item">
+                  <Link className="nav-link" to="/articles">
+                    Articles Catalog
+                  </Link>
+                </li>
+
                 {/* ABOUT */}
                 <li className="nav-item">
                   <Link className="nav-link" to="/about">
