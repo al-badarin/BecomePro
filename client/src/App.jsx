@@ -42,18 +42,27 @@ const App = () => {
   };
 
   const registerSubmitHandler = async (values) => {
-    console.log(values);
-    // try {
-    //   const result = await authService.login(values.email, values.password);
+    if (values.password !== values.repassword) {
+      setError('Passwords do not match');
 
-    //   setAuth(result);
+      return;
+    }
 
-    //   localStorage.setItem('accessToken', result.accessToken);
+    try {
+      const result = await authService.register(
+        values.email,
+        values.username,
+        values.password
+      );
 
-    //   navigate('/');
-    // } catch (err) {
-    //   setError(err.message);
-    // }
+      setAuth(result);
+
+      localStorage.setItem('accessToken', result.accessToken);
+
+      navigate('/');
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   const values = {
@@ -61,8 +70,8 @@ const App = () => {
     registerSubmitHandler,
     username: auth.username,
     email: auth.email,
-    isAuthenticated: !!auth.username
-  }
+    isAuthenticated: !!auth.email,
+  };
 
   return (
     <AuthContext.Provider value={values}>
