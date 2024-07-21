@@ -7,6 +7,7 @@ import Home from './components/home/Home';
 import Header from './components/header/Header';
 import HeroSlider from './components/hero-slider/HeroSlider';
 import ArticleCatalog from './components/article-catalog/ArticleCatalog';
+import ArticleCreate from './components/article-create/ArticleCreate';
 import AboutUs from './components/about-us/AboutUs';
 import Trainers from './components/trainers/Trainers';
 import Contact from './components/contact/Contact';
@@ -86,6 +87,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleCatalog />} />
+          <Route path="/articles/create" element={<ArticleCreate />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
