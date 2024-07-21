@@ -36,15 +36,36 @@ const App = () => {
       localStorage.setItem('accessToken', result.accessToken);
 
       navigate('/');
-
-      console.log('Login successful:', result);
     } catch (err) {
       setError(err.message);
     }
   };
 
+  const registerSubmitHandler = async (values) => {
+    console.log(values);
+    // try {
+    //   const result = await authService.login(values.email, values.password);
+
+    //   setAuth(result);
+
+    //   localStorage.setItem('accessToken', result.accessToken);
+
+    //   navigate('/');
+    // } catch (err) {
+    //   setError(err.message);
+    // }
+  };
+
+  const values = {
+    loginSubmitHandler,
+    registerSubmitHandler,
+    username: auth.username,
+    email: auth.email,
+    isAuthenticated: !!auth.username
+  }
+
   return (
-    <>
+    <AuthContext.Provider value={values}>
       <div className="hero_area">
         <Header />
 
@@ -53,22 +74,20 @@ const App = () => {
       </div>
 
       <main>
-        <AuthContext.Provider value={{ loginSubmitHandler }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/articles" element={<ArticleCatalog />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/trainers" element={<Trainers />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/logout" element={<Logout />} />
-          </Routes>
-        </AuthContext.Provider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/articles" element={<ArticleCatalog />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/trainers" element={<Trainers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
+        </Routes>
       </main>
 
       <Footer />
-    </>
+    </AuthContext.Provider>
   );
 };
 
