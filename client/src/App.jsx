@@ -1,5 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
+
+// import * as authService from '../../services/authService';
 
 import Home from './components/home/Home';
 import Header from './components/header/Header';
@@ -14,9 +17,34 @@ import Logout from './components/logout/Logout';
 import Footer from './components/footer/Footer';
 
 const App = () => {
+  const navigate = useNavigate();
+  const [auth, setAuth] = useState({})
+  const [error, setError] = useState(null);
+
+  // const initialValues = {
+  //   email: '',
+  //   password: '',
+  // };
+
+  const loginSubmitHandler = async (values) => {
+      console.log('Login successful:', values);
+
+    // try {
+    //   const result = await authService.login(values.email, values.password);
+
+    //   localStorage.setItem('accessToken', result.accessToken);
+
+    //   navigate('/');
+
+    //   console.log('Login successful:', result);
+    // } catch (err) {
+    //   setError(err.message);
+    // }
+  };
+
   return (
     <>
-      <div class="hero_area">
+      <div className="hero_area">
         <Header />
 
         {/* TODO: for what purpose to use HeroSlider */}
@@ -30,7 +58,7 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>

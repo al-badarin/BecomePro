@@ -1,4 +1,11 @@
-export default function Login() {
+import useForm from "../../hooks/useForm";
+
+export default function Login({ loginSubmitHandler }) {
+  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    email: '',
+    password: '',
+  });
+
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
@@ -8,7 +15,7 @@ export default function Login() {
               <h3>Login</h3>
             </div>
             <div className="card-body">
-              <form >
+              <form onSubmit={onSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input
@@ -16,6 +23,8 @@ export default function Login() {
                     className="form-control"
                     id="email"
                     name="email"
+                    onChange={onChange}
+                    value={values.email}
                     required
                   />
                 </div>
@@ -26,6 +35,8 @@ export default function Login() {
                     className="form-control"
                     id="password"
                     name="password"
+                    onChange={onChange}
+                    value={values.password}
                     required
                   />
                 </div>
