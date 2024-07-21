@@ -16,9 +16,11 @@ import Register from './components/register/Register';
 import Logout from './components/logout/Logout';
 import Footer from './components/footer/Footer';
 
+import AuthContext from './contexts/authContext';
+
 const App = () => {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState({})
+  const [auth, setAuth] = useState({});
   const [error, setError] = useState(null);
 
   // const initialValues = {
@@ -27,7 +29,7 @@ const App = () => {
   // };
 
   const loginSubmitHandler = async (values) => {
-      console.log('Login successful:', values);
+    console.log('Login successful:', values);
 
     // try {
     //   const result = await authService.login(values.email, values.password);
@@ -44,27 +46,29 @@ const App = () => {
 
   return (
     <>
-      <div className="hero_area">
-        <Header />
+      <AuthContext.Provider value={{ loginSubmitHandler }}>
+        <div className="hero_area">
+          <Header />
 
-        {/* TODO: for what purpose to use HeroSlider */}
-        <HeroSlider />
-      </div>
+          {/* TODO: for what purpose to use HeroSlider */}
+          <HeroSlider />
+        </div>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<ArticleCatalog />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/trainers" element={<Trainers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler} />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
-        </Routes>
-      </main>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/articles" element={<ArticleCatalog />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/trainers" element={<Trainers />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
+      </AuthContext.Provider>
     </>
   );
 };
