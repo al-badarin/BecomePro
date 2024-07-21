@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom';
+
 export default function HeroSlider() {
   return (
-    <section class="slider_section position-relative">
+    <section className="slider_section position-relative">
       <div
         id="carouselExampleIndicators"
-        class="carousel slide"
+        className="carousel slide"
         data-ride="carousel"
       >
         {/* TODO: for what purpose to use HeroSlider */}
 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <div className="container">
+              <div className="col-lg-10 col-md-11 mx-auto">
+                <div className="detail-box">
                   <div>
                     <h3>Fitness</h3>
                     <h2>Training</h2>
@@ -25,8 +27,8 @@ export default function HeroSlider() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse .
                     </p>
-                    <div class="">
-                      <a href="">Contact Us</a>
+                    <div className="">
+                      <Link to="">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -34,10 +36,10 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
+          <div className="carousel-item">
+            <div className="container">
+              <div className="col-lg-10 col-md-11 mx-auto">
+                <div className="detail-box">
                   <div>
                     <h3>Fitness</h3>
                     <h2>Training</h2>
@@ -50,8 +52,8 @@ export default function HeroSlider() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse .
                     </p>
-                    <div class="">
-                      <a href="">Contact Us</a>
+                    <div className="">
+                      <Link to="">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -59,10 +61,10 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
+          <div className="carousel-item">
+            <div className="container">
+              <div className="col-lg-10 col-md-11 mx-auto">
+                <div className="detail-box">
                   <div>
                     <h3>Fitness</h3>
                     <h2>Training</h2>
@@ -75,8 +77,8 @@ export default function HeroSlider() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse .
                     </p>
-                    <div class="">
-                      <a href="">Contact Us</a>
+                    <div className="">
+                      <Link to="">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -84,10 +86,10 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
+          <div className="carousel-item">
+            <div className="container">
+              <div className="col-lg-10 col-md-11 mx-auto">
+                <div className="detail-box">
                   <div>
                     <h3>Fitness</h3>
                     <h2>Training</h2>
@@ -100,8 +102,8 @@ export default function HeroSlider() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse .
                     </p>
-                    <div class="">
-                      <a href="">Contact Us</a>
+                    <div className="">
+                      <Link to="">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -109,10 +111,10 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          <div class="carousel-item">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
+          <div className="carousel-item">
+            <div className="container">
+              <div className="col-lg-10 col-md-11 mx-auto">
+                <div className="detail-box">
                   <div>
                     <h3>Fitness</h3>
                     <h2>Training</h2>
@@ -125,8 +127,8 @@ export default function HeroSlider() {
                       Duis aute irure dolor in reprehenderit in voluptate velit
                       esse .
                     </p>
-                    <div class="">
-                      <a href="">Contact Us</a>
+                    <div className="">
+                      <Link to="">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -134,11 +136,11 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
-        <ol class="carousel-indicators">
+        <ol className="carousel-indicators">
           <li
             data-target="#carouselExampleIndicators"
             data-slide-to="0"
-            class="active"
+            className="active"
           ></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
