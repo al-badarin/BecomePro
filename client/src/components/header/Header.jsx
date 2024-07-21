@@ -1,13 +1,20 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../contexts/authContext';
 
-export default function Hero() {
+export default function Header() {
+  const { isAuthenticated, username } = useContext(AuthContext);
+
   return (
     <header className="header_section">
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg custom_nav-container ">
+          {/* LOGO */}
           <Link className="navbar-brand" to="/">
             <span>BecomePro</span>
           </Link>
+
+          {/* TOGGLER */}
           <button
             className="navbar-toggler"
             type="button"
@@ -23,62 +30,77 @@ export default function Hero() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul className="navbar-nav">
-                {/* TODO: change active class dynamically */}
-                {/* HOME */}
-                <li className="nav-item active">
-                  <Link className="nav-link" to="/">
-                    Home <span className="sr-only">(current)</span>
-                  </Link>
-                </li>
+                {isAuthenticated && (
+                  <>
+                    {/* CREATE */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/articles/create">
+                        Create Article
+                      </Link>
+                    </li>
 
-                 {/* ARTICLES */}
-                 <li className="nav-item">
-                  <Link className="nav-link" to="/articles">
-                    Articles Catalog
-                  </Link>
-                </li>
+                    {/* LOGOUT */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/logout">
+                        Logout
+                      </Link>
+                    </li>
+                  </>
+                )}
 
-                {/* ABOUT */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/about">
-                    Why us
-                  </Link>
-                </li>
+                {!isAuthenticated && (
+                  <>
+                    {/* TODO: change active class dynamically  */}
+                    {/* HOME  */}
+                    <li className="nav-item active">
+                      <Link className="nav-link" to="/">
+                        Home <span className="sr-only">(current)</span>
+                      </Link>
+                    </li>
 
-                {/* TRAINERS */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/trainers">
-                    Trainers
-                  </Link>
-                </li>
+                    {/* ARTICLES  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/articles">
+                        Articles Catalog
+                      </Link>
+                    </li>
 
-                {/* CONTACT */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
-                    Contact Us
-                  </Link>
-                </li>
+                    {/* ABOUT  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/about">
+                        Why us
+                      </Link>
+                    </li>
 
-                {/* LOGIN */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">
-                    Login
-                  </Link>
-                </li>
+                    {/* TRAINERS  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/trainers">
+                        Trainers
+                      </Link>
+                    </li>
 
-                {/* REGISTER */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/register">
-                    Register
-                  </Link>
-                </li>
+                    {/* CONTACT  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/contact">
+                        Contact Us
+                      </Link>
+                    </li>
 
-                  {/* LOGOUT */}
-                  <li className="nav-item">
-                  <Link className="nav-link" to="/logout">
-                    Logout
-                  </Link>
-                </li>
+                    {/* LOGIN  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/login">
+                        Login
+                      </Link>
+                    </li>
+
+                    {/* REGISTER  */}
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/register">
+                        Register
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
 
               {/* SEARCH */}
