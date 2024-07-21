@@ -43,9 +43,11 @@ export default function Login() {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary mt-3">
-                  Login
-                </button>
+                <input
+                  type="submit"
+                  className="btn btn-primary mt-3"
+                  value="Login"
+                />
               </form>
             </div>
           </div>

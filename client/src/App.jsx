@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
-// import * as authService from '../../services/authService';
+import * as authService from './services/authService';
 
 import Home from './components/home/Home';
 import Header from './components/header/Header';
@@ -29,32 +28,32 @@ const App = () => {
   // };
 
   const loginSubmitHandler = async (values) => {
-    console.log('Login successful:', values);
+    try {
+      const result = await authService.login(values.email, values.password);
 
-    // try {
-    //   const result = await authService.login(values.email, values.password);
+      setAuth(result);
 
-    //   localStorage.setItem('accessToken', result.accessToken);
+      localStorage.setItem('accessToken', result.accessToken);
 
-    //   navigate('/');
+      navigate('/');
 
-    //   console.log('Login successful:', result);
-    // } catch (err) {
-    //   setError(err.message);
-    // }
+      console.log('Login successful:', result);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
     <>
-      <AuthContext.Provider value={{ loginSubmitHandler }}>
-        <div className="hero_area">
-          <Header />
+      <div className="hero_area">
+        <Header />
 
-          {/* TODO: for what purpose to use HeroSlider */}
-          <HeroSlider />
-        </div>
+        {/* TODO: for what purpose to use HeroSlider */}
+        <HeroSlider />
+      </div>
 
-        <main>
+      <main>
+        <AuthContext.Provider value={{ loginSubmitHandler }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/articles" element={<ArticleCatalog />} />
@@ -65,10 +64,10 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>
-        </main>
+        </AuthContext.Provider>
+      </main>
 
-        <Footer />
-      </AuthContext.Provider>
+      <Footer />
     </>
   );
 };
