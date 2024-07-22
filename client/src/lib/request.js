@@ -1,11 +1,12 @@
 const buildOptions = (data) => {
-  const options = {};
+  const options = {
+    headers: {
+      'content-type': 'application/json',
+    },
+  };
 
   if (data) {
     options.body = JSON.stringify(data);
-    options.headers = {
-      'content-type': 'application/json',
-    };
   }
 
   const token = localStorage.getItem('accessToken');
@@ -36,6 +37,8 @@ const request = async (method, url, data) => {
     if (!response.ok) {
       throw new Error(result.message || 'Something went wrong');
     }
+
+    return result;
   } catch (error) {
     console.error('HTTP Request Failed:', error);
     throw error;

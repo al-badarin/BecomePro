@@ -20,7 +20,11 @@ import AuthContext from './contexts/authContext';
 
 const App = () => {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(()=>{
+    localStorage.removeItem('accessToken')
+
+    return {}
+  });
   const [error, setError] = useState(null);
 
   // const initialValues = {
@@ -66,12 +70,19 @@ const App = () => {
     }
   };
 
+  const logoutHandler = () => {
+    setAuth({})
+
+    localStorage.removeItem('accessToken')
+  }
+
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username,
     email: auth.email,
-    isAuthenticated: !!auth.email,
+    isAuthenticated: !!auth.accessToken,
   };
 
   return (
