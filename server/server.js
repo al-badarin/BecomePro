@@ -1349,21 +1349,21 @@
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "How to Train in the Gym as a Football Player",
                 content: "Football players need a mix of strength, speed, and endurance. This guide covers gym routines tailored for football players, focusing on compound movements, agility drills, and endurance training...",
-                img: "./images/gym-training.png",
+                img: "https://qph.cf2.quoracdn.net/main-qimg-16f0449ab3918a3b5d997eacb5425a94-lq",
                 _createdOn: Date.now()
             },
             "b2c3d4e5-f6g7-8901-2345-678901abcdef": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 title: "What a Football Player Should Eat in a Day",
                 content: "Nutrition plays a critical role in a football player's performance. This article provides a meal plan that includes the right balance of carbohydrates, proteins, and fats to fuel intense training and matches...",
-                img: "./images/football-diet.png",
+                img: "https://i.ytimg.com/vi/PFta-Wl-5WQ/maxresdefault.jpg",
                 _createdOn: Date.now()
             },
             "c3d4e5f6-g7h8-9012-3456-789012abcdef": {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 title: "How to Become a Faster Football Player",
                 content: "Speed is essential in football. This article outlines training techniques and drills to improve your sprinting speed, agility, and overall quickness on the field...",
-                img: "./images/football-speed.png",
+                img: "https://i.ytimg.com/vi/O6FGdr0M19U/maxresdefault.jpg",
                 _createdOn: Date.now()
             }
         },
