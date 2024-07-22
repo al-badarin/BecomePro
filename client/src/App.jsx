@@ -16,21 +16,16 @@ import Register from './components/register/Register';
 import Logout from './components/logout/Logout';
 import Footer from './components/footer/Footer';
 
-import AuthContext from './contexts/authContext';
+import AuthProvider from './contexts/authContext';
 
 const App = () => {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState(()=>{
-    localStorage.removeItem('accessToken')
+  const [auth, setAuth] = useState(() => {
+    localStorage.removeItem('accessToken');
 
-    return {}
+    return {};
   });
   const [error, setError] = useState(null);
-
-  // const initialValues = {
-  //   email: '',
-  //   password: '',
-  // };
 
   const loginSubmitHandler = async (values) => {
     try {
@@ -71,10 +66,10 @@ const App = () => {
   };
 
   const logoutHandler = () => {
-    setAuth({})
+    setAuth({});
 
-    localStorage.removeItem('accessToken')
-  }
+    localStorage.removeItem('accessToken');
+  };
 
   const values = {
     loginSubmitHandler,
@@ -86,7 +81,7 @@ const App = () => {
   };
 
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider value={values}>
       <div className="hero_area">
         <Header />
 
@@ -109,7 +104,7 @@ const App = () => {
       </main>
 
       <Footer />
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 };
 
