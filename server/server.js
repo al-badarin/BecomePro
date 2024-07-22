@@ -1093,15 +1093,20 @@
             function register(body) {
                 if (body.hasOwnProperty(identity) === false ||
                     body.hasOwnProperty('password') === false ||
+                    body.hasOwnProperty('username') === false ||
                     body[identity].length == 0 ||
-                    body.password.length == 0) {
+                    body.password.length == 0 ||
+                    body.username.length == 0) {
                     throw new RequestError$2('Missing fields');
                 } else if (context.protectedStorage.query('users', { [identity]: body[identity] }).length !== 0) {
                     throw new ConflictError$1(`A user with the same ${identity} already exists`);
+                } else if (context.protectedStorage.query('users', { username: body.username }).length !== 0) {
+                    throw new ConflictError$1(`A user with the same username already exists`); 
                 } else {
                     const newUser = Object.assign({}, body, {
                         [identity]: body[identity],
-                        hashedPassword: hash(body.password)
+                        hashedPassword: hash(body.password),
+                        username: body.username
                     });
                     const result = context.protectedStorage.add('users', newUser);
                     delete result.hashedPassword;
