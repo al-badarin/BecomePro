@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../contexts/authContext';
 
+import styles from './Header.module.css';
+
 export default function Header() {
   const { isAuthenticated, username } = useContext(AuthContext);
 
@@ -30,6 +32,42 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul className="navbar-nav">
+                {/* TODO: change active class dynamically  */}
+                {/* HOME  */}
+                <li className="nav-item active">
+                  <Link className="nav-link" to="/">
+                    Home <span className="sr-only">(current)</span>
+                  </Link>
+                </li>
+
+                {/* ARTICLES  */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/articles">
+                    Articles Catalog
+                  </Link>
+                </li>
+
+                {/* ABOUT  */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/about">
+                    Why us
+                  </Link>
+                </li>
+
+                {/* TRAINERS  */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/trainers">
+                    Trainers
+                  </Link>
+                </li>
+
+                {/* CONTACT  */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/contact">
+                    Contact Us
+                  </Link>
+                </li>
+
                 {isAuthenticated && (
                   <>
                     {/* CREATE */}
@@ -50,42 +88,6 @@ export default function Header() {
 
                 {!isAuthenticated && (
                   <>
-                    {/* TODO: change active class dynamically  */}
-                    {/* HOME  */}
-                    <li className="nav-item active">
-                      <Link className="nav-link" to="/">
-                        Home <span className="sr-only">(current)</span>
-                      </Link>
-                    </li>
-
-                    {/* ARTICLES  */}
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/articles">
-                        Articles Catalog
-                      </Link>
-                    </li>
-
-                    {/* ABOUT  */}
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/about">
-                        Why us
-                      </Link>
-                    </li>
-
-                    {/* TRAINERS  */}
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/trainers">
-                        Trainers
-                      </Link>
-                    </li>
-
-                    {/* CONTACT  */}
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/contact">
-                        Contact Us
-                      </Link>
-                    </li>
-
                     {/* LOGIN  */}
                     <li className="nav-item">
                       <Link className="nav-link" to="/login">
@@ -102,7 +104,7 @@ export default function Header() {
                   </>
                 )}
               </ul>
-
+              
               {/* SEARCH */}
               {/* TODO: move as a separate component */}
               <div className="user_option">
@@ -113,6 +115,10 @@ export default function Header() {
                   ></button>
                 </form>
               </div>
+
+              {isAuthenticated && (
+                <span className={styles.username}>| {username}</span>
+              )}
             </div>
           </div>
         </nav>
