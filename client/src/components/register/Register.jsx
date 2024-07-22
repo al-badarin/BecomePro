@@ -21,6 +21,7 @@ export default function Register() {
             </div>
             <div className="card-body">
               <form onSubmit={onSubmit}>
+
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input
@@ -37,7 +38,7 @@ export default function Register() {
                 <div className="form-group">
                   <label htmlFor="username">Username</label>
                   <input
-                    type="username"
+                    type="text"
                     className="form-control"
                     id="username"
                     name="username"
