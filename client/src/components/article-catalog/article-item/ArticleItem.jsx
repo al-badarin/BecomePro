@@ -1,9 +1,11 @@
+import styles from './ArticleItem.module.css';
+
 export default function ArticleItem({ title, img, content }) {
   return (
-    <div className="article">
-      <h2>{title}</h2>
-      <img src={img} alt={title} />
-      <p>{content}</p>
+    <div className={styles.article}>
+      <h2 className={styles.title}>{title}</h2>
+      <img className={styles.image} src={img} alt={title} />
+      <p className={styles.content}>{content}</p>
     </div>
   );
 }

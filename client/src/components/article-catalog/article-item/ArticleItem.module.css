@@ -1,0 +1,32 @@
+.article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.article:hover {
+  transform: scale(1.02);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
