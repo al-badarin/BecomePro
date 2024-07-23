@@ -1,0 +1,24 @@
+.articleCatalog {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noArticles {
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+}
