@@ -8,7 +8,7 @@ export default function ArticleItem({ _id, title, imageUrl, content }) {
       <img className={styles.image} src={imageUrl} alt={title} />
       <p className={styles.content}>{content}</p>
 
-      <Link to={`/articles/${_id}`} className="details-button">
+      <Link to={`/articles/${_id}`} className={styles.detailsButton}>
         Read More
       </Link>
     </div>

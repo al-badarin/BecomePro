@@ -23,10 +23,12 @@ export default function ArticleCatalog() {
       });
   }, []);
 
+  // TODO: style loading spinner
   if (loading) {
     return <p>Loading...</p>;
   }
 
+  // TODO: style error handling messages / separate component? / use Formik
   if (error) {
     return <p>Error loading articles</p>;
   }
