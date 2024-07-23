@@ -15,6 +15,7 @@ import Logout from './components/logout/Logout';
 import Footer from './components/footer/Footer';
 
 import { AuthProvider } from './contexts/authContext';
+import AuthGuard from './components/guards/AuthGuard';
 
 const App = () => {
   return (
@@ -31,13 +32,17 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleCatalog />} />
           <Route path="/articles/:articleId" element={<ArticleDetails />} />
-          <Route path="/articles/create" element={<ArticleCreate />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path="/articles/create" element={<ArticleCreate />} />
+            {/* <Route path="/articles/edit" element={<ArticleEdit />} /> */}
+            <Route path="/logout" element={<Logout />} />
+          </Route>
         </Routes>
       </main>
 
