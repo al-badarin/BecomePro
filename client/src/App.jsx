@@ -16,6 +16,7 @@ import Footer from './components/footer/Footer';
 
 import { AuthProvider } from './contexts/authContext';
 import AuthGuard from './components/guards/AuthGuard';
+import GuestGuard from './components/guards/GuestGuard';
 
 const App = () => {
   return (
@@ -35,8 +36,11 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/trainers" element={<Trainers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+
+          <Route element={<GuestGuard />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
 
           <Route element={<AuthGuard />}>
             <Route path="/articles/create" element={<ArticleCreate />} />
