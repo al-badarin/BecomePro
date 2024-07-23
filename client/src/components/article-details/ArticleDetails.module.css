@@ -1,0 +1,50 @@
+.articleDetails {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.content {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover {
+  background: #0056b3;
+}
