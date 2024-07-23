@@ -9,7 +9,13 @@ export const getAll = async () => {
     return result;
   } catch (error) {
     console.error('Failed to fetch articles:', error);
-    
+
     return [];
   }
+};
+
+export const create = async (articleData) => {
+  const result = await request.post(baseUrl, articleData);
+
+  return result;
 };

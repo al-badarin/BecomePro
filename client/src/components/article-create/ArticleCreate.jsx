@@ -1,11 +1,39 @@
+import { useNavigate } from 'react-router';
 import * as articleService from '../../services/articleService';
 import styles from './ArticleCreate.module.css';
+import { useState } from 'react';
 
 export default function ArticleCreate() {
+  const navigate = useNavigate();
+  const [createFormData, setCreateFormData] = useState({
+    title: '',
+    content: '',
+    imageUrl: '',
+  });
+
+  const handleChange = (e) => {
+    setCreateFormData({
+      ...createFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const createArticleSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      await articleService.create(createFormData);
+
+      navigate('/articles');
+    } catch (error) {
+      console.error('Failed to create article', error);
+    }
+  };
+
   return (
     <div className={styles.articleCreate}>
       <h1 className={styles.title}>Create Article</h1>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={createArticleSubmitHandler}>
         <div className={styles.formGroup}>
           <label htmlFor="title" className={styles.label}>
             Title
@@ -15,8 +43,8 @@ export default function ArticleCreate() {
             id="title"
             name="title"
             className={styles.input}
-            // value={formData.title}
-            // onChange={handleChange}
+            value={createFormData.title}
+            onChange={handleChange}
             required
           />
         </div>
@@ -28,8 +56,8 @@ export default function ArticleCreate() {
             id="content"
             name="content"
             className={styles.textarea}
-            // value={formData.content}
-            // onChange={handleChange}
+            value={createFormData.content}
+            onChange={handleChange}
             required
           />
         </div>
@@ -42,8 +70,8 @@ export default function ArticleCreate() {
             id="imageUrl"
             name="imageUrl"
             className={styles.input}
-            // value={formData.imageUrl}
-            // onChange={handleChange}
+            value={createFormData.imageUrl}
+            onChange={handleChange}
             required
           />
         </div>
