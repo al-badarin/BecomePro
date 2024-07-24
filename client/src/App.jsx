@@ -6,6 +6,7 @@ import HeroSlider from './components/hero-slider/HeroSlider';
 import ArticleCatalog from './components/article-catalog/ArticleCatalog';
 import ArticleDetails from './components/article-details/ArticleDetails';
 import ArticleCreate from './components/article-create/ArticleCreate';
+import ArticleEdit from './components/article-edit/ArticleEdit';
 import AboutUs from './components/about-us/AboutUs';
 import Trainers from './components/trainers/Trainers';
 import Contact from './components/contact/Contact';
@@ -44,7 +45,7 @@ const App = () => {
 
           <Route element={<AuthGuard />}>
             <Route path="/articles/create" element={<ArticleCreate />} />
-            {/* <Route path="/articles/edit" element={<ArticleEdit />} /> */}
+            <Route path="/articles/:articleId/edit" element={<ArticleEdit />} />
             <Route path="/logout" element={<Logout />} />
           </Route>
         </Routes>
