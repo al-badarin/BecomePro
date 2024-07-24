@@ -21,7 +21,16 @@ export default function ArticleDetails() {
       });
   }, [articleId]);
 
-  //   const deleteButtonClickHandler
+  const deleteButtonClickHandler = async () => {
+    const hasConfirmed = confirm(
+      `Are you sure you want to delete the article: '${article.title}'`
+    );
+
+    if (hasConfirmed) {
+      await articleService.remove(articleId);
+      navigate('/articles');
+    }
+  };
 
   if (!article) {
     return <p>Loading...</p>;
@@ -43,8 +52,9 @@ export default function ArticleDetails() {
             Edit
           </Link>
 
-          {/* onClick={deleteButtonClickHandler} */}
-          <button className={styles.button}>Delete</button>
+          <button className={styles.button} onClick={deleteButtonClickHandler}>
+            Delete
+          </button>
         </div>
       )}
     </div>

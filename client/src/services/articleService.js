@@ -14,8 +14,17 @@ export const getAll = async () => {
   }
 };
 
+export const getOne = async (articleId) => {
+  const result = await request.get(`${baseUrl}/${articleId}`);
+
+  return result;
+};
+
 export const create = async (articleData) => {
   const result = await request.post(baseUrl, articleData);
 
   return result;
 };
+
+export const remove = async (articleId) =>
+  request.remove(`${baseUrl}/${articleId}`);
