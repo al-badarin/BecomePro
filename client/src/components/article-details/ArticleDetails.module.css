@@ -48,3 +48,32 @@
 .button:hover {
   background: #0056b3;
 }
+
+.likes {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.likeButton {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.likeButton:hover {
+  background-color: #0056b3;
+}
+
+.likeButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.likes span {
+  font-size: 16px;
+}
