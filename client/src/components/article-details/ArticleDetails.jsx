@@ -11,22 +11,22 @@ export default function ArticleDetails() {
   const { userId } = useContext(AuthContext);
   const { articleId } = useParams();
   const [article, setArticle] = useState(null);
-  const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
     articleService
       .getOne(articleId)
       .then((result) => {
         setArticle(result);
-        setIsOwner(result._ownerId === userId);
       })
       .catch((err) => {
         console.error('Failed to fetch article details', err);
+        // todo: add '401 page'
+        navigate('/401');
       });
-  }, [articleId, userId, navigate]);
+  }, [articleId, navigate]);
 
   const deleteButtonClickHandler = async () => {
-    if (!isOwner) {
+    if (article._ownerId !== userId) {
       alert('You are not authorized to delete this article.');
       return;
     }
@@ -45,6 +45,7 @@ export default function ArticleDetails() {
     }
   };
 
+  //   TODO: style the <p>
   if (!article) {
     return <p>Loading...</p>;
   }

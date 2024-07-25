@@ -1,8 +1,8 @@
 .articleEdit {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background: #f4f4f4;
   border-radius: 8px;
 }
 
@@ -18,23 +18,20 @@
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .label {
-  font-weight: bold;
   margin-bottom: 5px;
-  display: block;
+  font-weight: bold;
 }
 
 .input,
 .textarea {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .textarea {
@@ -50,9 +47,21 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
   background-color: #0056b3;
+}
+
+.unauthorized {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+  max-width: 600px;
+  margin: auto;
 }

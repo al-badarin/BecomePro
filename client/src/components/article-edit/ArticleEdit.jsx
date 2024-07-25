@@ -1,33 +1,37 @@
 import { useNavigate, useParams } from 'react-router';
-import * as articleService from '../../services/articleService';
-import styles from './ArticleEdit.module.css';
 import { useContext, useEffect, useState } from 'react';
+
+import * as articleService from '../../services/articleService';
 import AuthContext from '../../contexts/authContext';
+
+import styles from './ArticleEdit.module.css';
 
 export default function ArticleEdit() {
   const navigate = useNavigate();
   const { userId } = useContext(AuthContext);
   const { articleId } = useParams();
-  const [editFormData, setEditFormData] = useState({
-    title: '',
-    content: '',
-    imageUrl: '',
-  });
+  const [editFormData, setEditFormData] = useState(null);
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
     articleService
       .getOne(articleId)
       .then((article) => {
-        setEditFormData(article);
-        setIsOwner(article._ownerId === userId);
+        if (article._ownerId === userId) {
+          setEditFormData(article);
+          setIsOwner(true);
+        } else {
+          setIsOwner(false);
+          alert('You are not authorized to edit this article.');
+          navigate('/articles');
+        }
       })
       .catch((err) => {
         console.error(err);
         // todo:
         // navigate('/not-found');
       });
-  }, [articleId, navigate, userId]);
+  }, [articleId, userId, navigate]);
 
   const handleChange = (e) => {
     setEditFormData({
@@ -49,12 +53,19 @@ export default function ArticleEdit() {
       navigate(`/articles/${articleId}`);
     } catch (error) {
       console.error(error);
+      // todo: add '401 page'
+      navigate('/401');
     }
   };
 
-  //   TODO: style the <p>
+  if (editFormData === null) {
+    return <p>Loading...</p>;
+  }
+
   if (!isOwner) {
-    return <p>You are not authorized to edit this article.</p>;
+    <p className={styles.unauthorized}>
+      You are not authorized to edit this article.
+    </p>;
   }
 
   return (
