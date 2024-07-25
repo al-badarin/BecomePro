@@ -7,28 +7,41 @@ import AuthContext from '../../contexts/authContext';
 import styles from './ArticleDetails.module.css';
 
 export default function ArticleDetails() {
-  const { articleId } = useParams();
-  const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { userId } = useContext(AuthContext);
+  const { articleId } = useParams();
   const [article, setArticle] = useState(null);
+  const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
     articleService
       .getOne(articleId)
-      .then((result) => setArticle(result))
+      .then((result) => {
+        setArticle(result);
+        setIsOwner(result._ownerId === userId);
+      })
       .catch((err) => {
         console.error('Failed to fetch article details', err);
       });
-  }, [articleId]);
+  }, [articleId, userId, navigate]);
 
   const deleteButtonClickHandler = async () => {
+    if (!isOwner) {
+      alert('You are not authorized to delete this article.');
+      return;
+    }
+
     const hasConfirmed = confirm(
       `Are you sure you want to delete the article: '${article.title}'`
     );
 
     if (hasConfirmed) {
-      await articleService.remove(articleId);
-      navigate('/articles');
+      try {
+        await articleService.remove(articleId);
+        navigate('/articles');
+      } catch (error) {
+        console.error('Failed to delete article', error);
+      }
     }
   };
 
