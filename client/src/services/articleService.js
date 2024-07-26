@@ -20,6 +20,11 @@ export const getOne = async (articleId) => {
   return result;
 };
 
+export const getLatest = async (count = 9) => {
+  const result = await request.get(`${baseUrl}?_sort=created_at&_order=desc&_limit=${count}`);
+  return result;
+};
+
 export const create = async (articleData) => {
   const result = await request.post(baseUrl, articleData);
 
