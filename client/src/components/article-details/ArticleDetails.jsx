@@ -111,14 +111,16 @@ export default function ArticleDetails() {
       />
       <p className={styles.content}>{article.content}</p>
 
-      <div className={styles.likes}>
-        <button onClick={toggleLikeHandler} className={styles.likeButton}>
-          {userHasLiked ? 'Unlike' : 'Like'}
-        </button>
-        <span>
-          {likeCount} {likeCount === 1 ? 'Like' : 'Likes'}
-        </span>
-      </div>
+      {isAuthenticated && userId !== article._ownerId && (
+        <div className={styles.likes}>
+          <button onClick={toggleLikeHandler} className={styles.likeButton}>
+            {userHasLiked ? 'Unlike' : 'Like'}
+          </button>
+          <span>
+            {likeCount} {likeCount === 1 ? 'Like' : 'Likes'}
+          </span>
+        </div>
+      )}
 
       {userId === article._ownerId && (
         <div className={styles.buttons}>
