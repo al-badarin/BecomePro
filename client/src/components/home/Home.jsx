@@ -1,14 +1,10 @@
-import ArticleItem from '../article-catalog/article-item/ArticleItem';
+import LatestArticlesCarousel from './latest-articles-carousel/LatestArticlesCarousel';
 
 export default function Home() {
   return (
-    <>
-      <h1>Latest Articles</h1>
-      
-      // TODO: - render all articles one by one; - use cards to display
-      <ArticleItem />
-      <ArticleItem />
-      <ArticleItem />
-    </>
+    <div>
+      <LatestArticlesCarousel />
+      {/* other home page content */}
+    </div>
   );
 }
