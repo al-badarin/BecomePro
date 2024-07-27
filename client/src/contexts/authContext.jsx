@@ -16,19 +16,18 @@ export const AuthProvider = ({ children }) => {
       const result = await authService.login(values.email, values.password);
 
       setAuth(result);
-
       localStorage.setItem('accessToken', result.accessToken);
 
+      setError(null);
       navigate('/');
     } catch (err) {
-      setError(err.message);
+      setError('Incorrect email or password. Please try again.');
     }
   };
 
   const registerSubmitHandler = async (values) => {
     if (values.password !== values.repassword) {
       setError('Passwords do not match');
-
       return;
     }
 
@@ -40,12 +39,14 @@ export const AuthProvider = ({ children }) => {
       );
 
       setAuth(result);
-
       localStorage.setItem('accessToken', result.accessToken);
 
+      setError(null);
       navigate('/');
     } catch (err) {
-      setError(err.message);
+      setError(
+        err.message || 'An unexpected error occurred. Please try again.'
+      );
     }
   };
 
@@ -63,6 +64,7 @@ export const AuthProvider = ({ children }) => {
     email: auth.email,
     userId: auth._id,
     isAuthenticated: !!auth.accessToken,
+    errorMessage: error,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
