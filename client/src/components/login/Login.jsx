@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 // import useForm from '../../hooks/useForm';
 import AuthContext from '../../contexts/authContext';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { loginSubmitHandler, errorMessage } = useContext(AuthContext);
@@ -100,6 +101,12 @@ export default function Login() {
                   value="Login"
                 />
               </form>
+              <div className="mt-3">
+                <p>
+                  Don't have an account?{' '}
+                  <Link to="/register">Sign up here</Link>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
