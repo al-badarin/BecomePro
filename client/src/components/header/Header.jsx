@@ -1,11 +1,14 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import AuthContext from '../../contexts/authContext';
 
 import styles from './Header.module.css';
 
 export default function Header() {
   const { isAuthenticated, username } = useContext(AuthContext);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="header_section">
@@ -32,37 +35,36 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul className="navbar-nav">
-                {/* TODO: change active class dynamically  */}
                 {/* HOME  */}
-                <li className="nav-item active">
+                <li className={`nav-item ${isActive('/') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/">
                     Home <span className="sr-only">(current)</span>
                   </Link>
                 </li>
 
                 {/* ARTICLES  */}
-                <li className="nav-item">
+                <li className={`nav-item ${isActive('/articles') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/articles">
                     Articles Catalog
                   </Link>
                 </li>
 
                 {/* ABOUT  */}
-                <li className="nav-item">
+                <li className={`nav-item ${isActive('/about') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/about">
                     Why us
                   </Link>
                 </li>
 
                 {/* TRAINERS  */}
-                <li className="nav-item">
+                <li className={`nav-item ${isActive('/trainers') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/trainers">
                     Trainers
                   </Link>
                 </li>
 
                 {/* CONTACT  */}
-                <li className="nav-item">
+                <li className={`nav-item ${isActive('/contact') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/contact">
                     Contact Us
                   </Link>
@@ -71,14 +73,14 @@ export default function Header() {
                 {isAuthenticated && (
                   <>
                     {/* CREATE */}
-                    <li className="nav-item">
+                    <li className={`nav-item ${isActive('/articles/create') ? 'active' : ''}`}>
                       <Link className="nav-link" to="/articles/create">
                         Create Article
                       </Link>
                     </li>
 
                     {/* LOGOUT */}
-                    <li className="nav-item">
+                    <li className={`nav-item ${isActive('/logout') ? 'active' : ''}`}>
                       <Link className="nav-link" to="/logout">
                         Logout
                       </Link>
@@ -89,14 +91,14 @@ export default function Header() {
                 {!isAuthenticated && (
                   <>
                     {/* LOGIN  */}
-                    <li className="nav-item">
+                    <li className={`nav-item ${isActive('/login') ? 'active' : ''}`}>
                       <Link className="nav-link" to="/login">
                         Login
                       </Link>
                     </li>
 
                     {/* REGISTER  */}
-                    <li className="nav-item">
+                    <li className={`nav-item ${isActive('/register') ? 'active' : ''}`}>
                       <Link className="nav-link" to="/register">
                         Register
                       </Link>
@@ -104,7 +106,7 @@ export default function Header() {
                   </>
                 )}
               </ul>
-              
+
               {/* SEARCH */}
               {/* TODO: move as a separate component */}
               <div className="user_option">
