@@ -10,12 +10,10 @@ export const unlike = async (likeId) => {
   return request.remove(`${baseUrl}/${likeId}`);
 };
 
-// todo:
 export const getLikes = async (articleId) => {
   return request.get(`${baseUrl}?where=articleId%3D"${articleId}"&count`);
 };
 
-// todo:
 export const userHasLiked = async (articleId, userId) => {
   return request.get(
     `${baseUrl}?where=articleId%3D"${articleId}"%20and%20_ownerId%3D"${userId}"`
