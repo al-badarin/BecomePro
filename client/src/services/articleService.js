@@ -4,7 +4,7 @@ const baseUrl = 'http://localhost:3030/data/articles';
 
 export const getAll = async () => {
   try {
-    const result = await request.get(baseUrl);
+    const result = await request.get(`${baseUrl}?sortBy=_createdOn desc`);
 
     return result;
   } catch (error) {
@@ -20,9 +20,8 @@ export const getOne = async (articleId) => {
   return result;
 };
 
-export const getLatest = async (count = 9) => {
-  const result = await request.get(`${baseUrl}?_sort=created_at&_order=desc&_limit=${count}`);
-  return result;
+export const getLatest = async (limit = 9) => {
+  return request.get(`${baseUrl}?sortBy=_createdOn desc&pageSize=${limit}`);
 };
 
 export const create = async (articleData) => {
