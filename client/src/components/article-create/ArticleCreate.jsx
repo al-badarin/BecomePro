@@ -1,39 +1,47 @@
 import { useNavigate } from 'react-router';
 import * as articleService from '../../services/articleService';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import styles from './ArticleCreate.module.css';
-import { useState } from 'react';
 
 export default function ArticleCreate() {
   const navigate = useNavigate();
-  const [createFormData, setCreateFormData] = useState({
-    title: '',
-    content: '',
-    imageUrl: '',
+
+  const formik = useFormik({
+    initialValues: {
+      title: '',
+      content: '',
+      imageUrl: '',
+    },
+    validationSchema: Yup.object({
+      title: Yup.string()
+        .min(5, 'Title must be between 5 and 50 characters')
+        .max(50, 'Title must be between 5 and 50 characters')
+        .required('Title is required'),
+      content: Yup.string()
+        .min(10, 'Content must be at least 10 characters long')
+        .required('Content is required'),
+      imageUrl: Yup.string()
+        .url('Invalid URL format')
+        .required('Image URL is required'),
+    }),
+    onSubmit: async (values, { setSubmitting }) => {
+      try {
+        await articleService.create(values);
+        navigate('/articles');
+      } catch (error) {
+        console.error('Failed to create article', error);
+      } finally {
+        setSubmitting(false);
+      }
+    },
   });
-
-  const handleChange = (e) => {
-    setCreateFormData({
-      ...createFormData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const createArticleSubmitHandler = async (e) => {
-    e.preventDefault();
-
-    try {
-      await articleService.create(createFormData);
-
-      navigate('/articles');
-    } catch (error) {
-      console.error('Failed to create article', error);
-    }
-  };
 
   return (
     <div className={styles.articleCreate}>
       <h1 className={styles.title}>Create Article</h1>
-      <form className={styles.form} onSubmit={createArticleSubmitHandler}>
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
+        {/* TITLE */}
         <div className={styles.formGroup}>
           <label htmlFor="title" className={styles.label}>
             Title
@@ -43,11 +51,16 @@ export default function ArticleCreate() {
             id="title"
             name="title"
             className={styles.input}
-            value={createFormData.title}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.title}
           />
+          {formik.touched.title && formik.errors.title ? (
+            <div className={styles.error}>{formik.errors.title}</div>
+          ) : null}
         </div>
+
+        {/* CONTENT */}
         <div className={styles.formGroup}>
           <label htmlFor="content" className={styles.label}>
             Content
@@ -56,11 +69,16 @@ export default function ArticleCreate() {
             id="content"
             name="content"
             className={styles.textarea}
-            value={createFormData.content}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.content}
           />
+          {formik.touched.content && formik.errors.content ? (
+            <div className={styles.error}>{formik.errors.content}</div>
+          ) : null}
         </div>
+
+        {/* IMAGE */}
         <div className={styles.formGroup}>
           <label htmlFor="imageUrl" className={styles.label}>
             Image URL
@@ -70,12 +88,21 @@ export default function ArticleCreate() {
             id="imageUrl"
             name="imageUrl"
             className={styles.input}
-            value={createFormData.imageUrl}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.imageUrl}
           />
+          {formik.touched.imageUrl && formik.errors.imageUrl ? (
+            <div className={styles.error}>{formik.errors.imageUrl}</div>
+          ) : null}
         </div>
-        <button type="submit" className={styles.button}>
+
+        {/* ACTION BTN */}
+        <button
+          type="submit"
+          className={styles.button}
+          disabled={formik.isSubmitting}
+        >
           Create
         </button>
       </form>
