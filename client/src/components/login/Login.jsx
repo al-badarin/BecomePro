@@ -2,17 +2,12 @@ import { useContext } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-// import useForm from '../../hooks/useForm';
 import AuthContext from '../../contexts/authContext';
 import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { loginSubmitHandler, errorMessage } = useContext(AuthContext);
 
-  // const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
-  //   email: '',
-  //   password: '',
-  // });
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -40,12 +35,14 @@ export default function Login() {
               <h3>Login</h3>
             </div>
             <div className="card-body">
+              {/* ERROR MESSAGE */}
               {errorMessage && (
                 <div className="alert alert-danger" role="alert">
                   {errorMessage}
                 </div>
               )}
               <form onSubmit={formik.handleSubmit}>
+                {/* EMAIL */}
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   {/* EMAIL INPUT */}
@@ -71,6 +68,7 @@ export default function Login() {
                   ) : null}
                 </div>
 
+                {/* PASSWORD */}
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
                   {/* PASSWORD INPUT */}
@@ -95,6 +93,7 @@ export default function Login() {
                     </div>
                   ) : null}
                 </div>
+                
                 <input
                   type="submit"
                   className="btn btn-primary mt-3"
