@@ -21,7 +21,11 @@ export const getOne = async (articleId) => {
 };
 
 export const getLatest = async (limit = 9) => {
-  return request.get(`${baseUrl}?sortBy=_createdOn desc&pageSize=${limit}`);
+  const result = await request.get(
+    `${baseUrl}?sortBy=_createdOn desc&pageSize=${limit}`
+  );
+
+  return result;
 };
 
 export const create = async (articleData) => {
