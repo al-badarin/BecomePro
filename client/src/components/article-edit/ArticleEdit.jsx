@@ -1,5 +1,7 @@
 import { useNavigate, useParams } from 'react-router';
 import { useContext, useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import * as articleService from '../../services/articleService';
 import AuthContext from '../../contexts/authContext';
@@ -10,7 +12,7 @@ export default function ArticleEdit() {
   const navigate = useNavigate();
   const { userId } = useContext(AuthContext);
   const { articleId } = useParams();
-  const [editFormData, setEditFormData] = useState(null);
+  const [initialValues, setInitialValues] = useState(null);
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function ArticleEdit() {
       .getOne(articleId)
       .then((article) => {
         if (article._ownerId === userId) {
-          setEditFormData(article);
+          setInitialValues(article);
           setIsOwner(true);
         } else {
           setIsOwner(false);
@@ -33,45 +35,61 @@ export default function ArticleEdit() {
       });
   }, [articleId, userId, navigate]);
 
-  const handleChange = (e) => {
-    setEditFormData({
-      ...editFormData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const formik = useFormik({
+    initialValues: initialValues || {
+      title: '',
+      content: '',
+      imageUrl: '',
+    },
+    enableReinitialize: true,
+    validationSchema: Yup.object({
+      title: Yup.string()
+        .min(5, 'Title must be between 5 and 50 characters')
+        .max(50, 'Title must be between 5 and 50 characters')
+        .required('Title is required'),
+      content: Yup.string()
+        .min(10, 'Content must be at least 10 characters long')
+        .required('Content is required'),
+      imageUrl: Yup.string()
+        .url('Invalid URL format')
+        .required('Image URL is required'),
+    }),
+    onSubmit: async (values, { setSubmitting }) => {
+      if (!isOwner) {
+        alert('You are not authorized to edit this article.');
+        return;
+      }
 
-  const editArticleSubmitHandler = async (e) => {
-    e.preventDefault();
+      try {
+        await articleService.edit(articleId, values);
+        navigate(`/articles/${articleId}`);
+      } catch (error) {
+        console.error('Failed to update article', error);
+        navigate('/401');
+      } finally {
+        setSubmitting(false);
+      }
+    },
+  });
 
-    if (!isOwner) {
-      alert('You are not authorized to edit this article.');
-      return;
-    }
-
-    try {
-      await articleService.edit(articleId, editFormData);
-      navigate(`/articles/${articleId}`);
-    } catch (error) {
-      console.error(error);
-      // todo: add '401 page'
-      navigate('/401');
-    }
-  };
-
-  if (editFormData === null) {
+  // todo: add styling for the spinner
+  if (!initialValues) {
     return <p>Loading...</p>;
   }
 
   if (!isOwner) {
-    <p className={styles.unauthorized}>
-      You are not authorized to edit this article.
-    </p>;
+    return (
+      <p className={styles.unauthorized}>
+        You are not authorized to edit this article.
+      </p>
+    );
   }
 
   return (
     <div className={styles.articleEdit}>
       <h1 className={styles.title}>Edit Article</h1>
-      <form className={styles.form} onSubmit={editArticleSubmitHandler}>
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
+        {/* TITLE */}
         <div className={styles.formGroup}>
           <label htmlFor="title" className={styles.label}>
             Title
@@ -81,11 +99,16 @@ export default function ArticleEdit() {
             id="title"
             name="title"
             className={styles.input}
-            value={editFormData.title}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.title}
           />
+          {formik.touched.title && formik.errors.title ? (
+            <div className={styles.error}>{formik.errors.title}</div>
+          ) : null}
         </div>
+
+        {/* CONTENT */}
         <div className={styles.formGroup}>
           <label htmlFor="content" className={styles.label}>
             Content
@@ -94,11 +117,16 @@ export default function ArticleEdit() {
             id="content"
             name="content"
             className={styles.textarea}
-            value={editFormData.content}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.content}
           />
+          {formik.touched.content && formik.errors.content ? (
+            <div className={styles.error}>{formik.errors.content}</div>
+          ) : null}
         </div>
+
+        {/* IMAGE */}
         <div className={styles.formGroup}>
           <label htmlFor="imageUrl" className={styles.label}>
             Image URL
@@ -108,12 +136,21 @@ export default function ArticleEdit() {
             id="imageUrl"
             name="imageUrl"
             className={styles.input}
-            value={editFormData.imageUrl}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.imageUrl}
           />
+          {formik.touched.imageUrl && formik.errors.imageUrl ? (
+            <div className={styles.error}>{formik.errors.imageUrl}</div>
+          ) : null}
         </div>
-        <button type="submit" className={styles.button}>
+
+        {/* ACTION BTN */}
+        <button
+          type="submit"
+          className={styles.button}
+          disabled={formik.isSubmitting}
+        >
           Update
         </button>
       </form>
