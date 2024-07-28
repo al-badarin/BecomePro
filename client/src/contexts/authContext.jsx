@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerSubmitHandler = async (values) => {
+    setError(null);
+
     if (values.password !== values.repassword) {
       setError('Passwords do not match');
       return;
@@ -40,8 +42,6 @@ export const AuthProvider = ({ children }) => {
 
       setAuth(result);
       localStorage.setItem('accessToken', result.accessToken);
-
-      setError(null);
       navigate('/');
     } catch (err) {
       setError(
