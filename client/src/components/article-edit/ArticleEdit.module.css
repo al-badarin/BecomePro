@@ -65,3 +65,9 @@
   max-width: 600px;
   margin: auto;
 }
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 5px;
+}
