@@ -1,0 +1,61 @@
+.trainerSection {
+  padding: 20px;
+}
+
+.headingContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.imgBox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.socialBox {
+  background-color: #dddddd; 
+  padding: 10px 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.socialBox a {
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+.facebookIcon {
+  color: #3b5998;
+}
+
+.instagramIcon {
+  color: #e1306c;
+}
+
+.emailIcon {
+  color: #ea4335;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
