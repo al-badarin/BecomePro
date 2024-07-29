@@ -24,8 +24,6 @@ const App = () => {
     <AuthProvider>
       <div className="hero_area">
         <Header />
-
-        {/* TODO: for what purpose to use HeroSlider */}
         <HeroSlider />
       </div>
 
