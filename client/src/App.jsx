@@ -19,6 +19,7 @@ import { AuthProvider } from './contexts/authContext';
 import AuthGuard from './components/guards/AuthGuard';
 import GuestGuard from './components/guards/GuestGuard';
 import ErrorBoundary from './components/errors/error-boundary/ErrorBoundary';
+import NotFound from './components/errors/error-404/NotFound';
 
 const App = () => {
   return (
