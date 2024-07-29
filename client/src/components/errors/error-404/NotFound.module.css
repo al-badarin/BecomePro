@@ -1,0 +1,38 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.notFound h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #d9534f;
+}
+
+.notFound p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.notFound a {
+  font-size: 1.25rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.notFound a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
