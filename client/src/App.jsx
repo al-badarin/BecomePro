@@ -18,39 +18,45 @@ import Footer from './components/footer/Footer';
 import { AuthProvider } from './contexts/authContext';
 import AuthGuard from './components/guards/AuthGuard';
 import GuestGuard from './components/guards/GuestGuard';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
   return (
-    <AuthProvider>
-      <div className="hero_area">
-        <Header />
-        <HeroSlider />
-      </div>
+    <ErrorBoundary>
+      <AuthProvider>
+        <div className="hero_area">
+          <Header />
+          <HeroSlider />
+        </div>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<ArticleCatalog />} />
-          <Route path="/articles/:articleId" element={<ArticleDetails />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/trainers" element={<Trainers />} />
-          <Route path="/contact" element={<Contact />} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/articles" element={<ArticleCatalog />} />
+            <Route path="/articles/:articleId" element={<ArticleDetails />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/trainers" element={<Trainers />} />
+            <Route path="/contact" element={<Contact />} />
 
-          <Route element={<GuestGuard />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
+            <Route element={<GuestGuard />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
 
-          <Route element={<AuthGuard />}>
-            <Route path="/articles/create" element={<ArticleCreate />} />
-            <Route path="/articles/:articleId/edit" element={<ArticleEdit />} />
-            <Route path="/logout" element={<Logout />} />
-          </Route>
-        </Routes>
-      </main>
+            <Route element={<AuthGuard />}>
+              <Route path="/articles/create" element={<ArticleCreate />} />
+              <Route
+                path="/articles/:articleId/edit"
+                element={<ArticleEdit />}
+              />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
+          </Routes>
+        </main>
 
-      <Footer />
-    </AuthProvider>
+        <Footer />
+      </AuthProvider>
+    </ErrorBoundary>
   );
 };
 
