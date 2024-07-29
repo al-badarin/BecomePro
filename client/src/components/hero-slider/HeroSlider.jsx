@@ -8,27 +8,25 @@ export default function HeroSlider() {
         className="carousel slide"
         data-ride="carousel"
       >
-        {/* TODO: for what purpose to use HeroSlider */}
-
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="container">
               <div className="col-lg-10 col-md-11 mx-auto">
                 <div className="detail-box">
                   <div>
-                    <h3>Fitness</h3>
-                    <h2>Training</h2>
-                    <h1>Neogym</h1>
+                    <h3>Master the Game</h3>
+                    <h2>All-Round Football Development</h2>
+                    <h1>BecomePro</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse .
+                      Explore comprehensive training programs, expert nutrition
+                      advice, and tactical insights to elevate your football
+                      skills. Whether you're looking to improve your physical
+                      fitness, mental game, or on-field tactics, BecomePro
+                      provides the resources you need to become a complete
+                      football player.
                     </p>
-                    <div className="">
-                      <Link to="">Contact Us</Link>
+                    <div>
+                      <Link to="/contact">Contact Us</Link>
                     </div>
                   </div>
                 </div>
@@ -41,19 +39,17 @@ export default function HeroSlider() {
               <div className="col-lg-10 col-md-11 mx-auto">
                 <div className="detail-box">
                   <div>
-                    <h3>Fitness</h3>
-                    <h2>Training</h2>
-                    <h1>Neogym</h1>
+                    <h3>Train Like a Pro</h3>
+                    <h2>Elite Training Programs</h2>
+                    <h1>BecomePro</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse .
+                      Discover specialized workouts designed for football
+                      players. From strength and conditioning to speed and
+                      agility drills, our training programs are tailored to help
+                      you reach your peak performance on the pitch.
                     </p>
-                    <div className="">
-                      <Link to="">Contact Us</Link>
+                    <div>
+                      <Link to="/articles">Explore Articles</Link>
                     </div>
                   </div>
                 </div>
@@ -66,19 +62,17 @@ export default function HeroSlider() {
               <div className="col-lg-10 col-md-11 mx-auto">
                 <div className="detail-box">
                   <div>
-                    <h3>Fitness</h3>
-                    <h2>Training</h2>
-                    <h1>Neogym</h1>
+                    <h3>Fuel Your Performance</h3>
+                    <h2>Nutrition for Footballers</h2>
+                    <h1>BecomePro</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse .
+                      Learn about the best dietary practices to fuel your body
+                      and enhance recovery. Our expert guides cover everything
+                      from meal planning to hydration strategies, ensuring you
+                      have the energy to perform at your best.
                     </p>
-                    <div className="">
-                      <Link to="">Contact Us</Link>
+                    <div>
+                      <Link to="/articles">Read More</Link>
                     </div>
                   </div>
                 </div>
@@ -91,19 +85,17 @@ export default function HeroSlider() {
               <div className="col-lg-10 col-md-11 mx-auto">
                 <div className="detail-box">
                   <div>
-                    <h3>Fitness</h3>
-                    <h2>Training</h2>
-                    <h1>Neogym</h1>
+                    <h3>Mental Toughness</h3>
+                    <h2>Mindset Training</h2>
+                    <h1>BecomePro</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse .
+                      Develop the mental resilience needed to excel in football.
+                      Our resources offer strategies to boost your confidence,
+                      stay focused under pressure, and maintain a positive
+                      attitude both on and off the field.
                     </p>
-                    <div className="">
-                      <Link to="">Contact Us</Link>
+                    <div>
+                      <Link to="/articles">Learn More</Link>
                     </div>
                   </div>
                 </div>
@@ -116,19 +108,17 @@ export default function HeroSlider() {
               <div className="col-lg-10 col-md-11 mx-auto">
                 <div className="detail-box">
                   <div>
-                    <h3>Fitness</h3>
-                    <h2>Training</h2>
-                    <h1>Neogym</h1>
+                    <h3>Tactical Mastery</h3>
+                    <h2>Understanding the Game</h2>
+                    <h1>BecomePro</h1>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse .
+                      Gain deeper insights into the tactical aspects of
+                      football. Our articles cover formations, strategies, and
+                      decision-making processes to help you understand the game
+                      at a higher level.
                     </p>
-                    <div className="">
-                      <Link to="">Contact Us</Link>
+                    <div>
+                      <Link to="/articles">Explore Tactics</Link>
                     </div>
                   </div>
                 </div>
