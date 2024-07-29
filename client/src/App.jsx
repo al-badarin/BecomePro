@@ -18,7 +18,7 @@ import Footer from './components/footer/Footer';
 import { AuthProvider } from './contexts/authContext';
 import AuthGuard from './components/guards/AuthGuard';
 import GuestGuard from './components/guards/GuestGuard';
-import ErrorBoundary from './components/ErrorBoundary';
+import ErrorBoundary from './components/errors/error-boundary/ErrorBoundary';
 
 const App = () => {
   return (
@@ -51,6 +51,9 @@ const App = () => {
               />
               <Route path="/logout" element={<Logout />} />
             </Route>
+
+            {/* 404 Page */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
