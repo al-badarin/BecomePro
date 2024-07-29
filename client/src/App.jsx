@@ -19,6 +19,7 @@ import { AuthProvider } from './contexts/authContext';
 import AuthGuard from './components/guards/AuthGuard';
 import GuestGuard from './components/guards/GuestGuard';
 import ErrorBoundary from './components/errors/error-boundary/ErrorBoundary';
+import NotAuthorized from './components/errors/error-401/NotAuthorized';
 import NotFound from './components/errors/error-404/NotFound';
 
 const App = () => {
@@ -52,6 +53,9 @@ const App = () => {
               />
               <Route path="/logout" element={<Logout />} />
             </Route>
+
+            {/* 401 Page */}
+            <Route path="/401" element={<NotAuthorized />} />
 
             {/* 404 Page */}
             <Route path="*" element={<NotFound />} />
