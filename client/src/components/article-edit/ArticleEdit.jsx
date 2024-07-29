@@ -25,13 +25,12 @@ export default function ArticleEdit() {
         } else {
           setIsOwner(false);
           alert('You are not authorized to edit this article.');
-          navigate('/articles');
+          navigate('/401');
         }
       })
       .catch((err) => {
         console.error(err);
-        // todo:
-        // navigate('/not-found');
+        navigate('/404');
       });
   }, [articleId, userId, navigate]);
 

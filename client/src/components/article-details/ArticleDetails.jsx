@@ -25,7 +25,6 @@ export default function ArticleDetails() {
       })
       .catch((err) => {
         console.error('Failed to fetch article details', err);
-        // todo: add '401 / 404 page'
         navigate('/404');
       });
 
@@ -96,7 +95,7 @@ export default function ArticleDetails() {
     }
   };
 
-  //   TODO: style the <p>
+  //   TODO: style the <p> loading bar
   if (!article) {
     return <p>Loading...</p>;
   }
