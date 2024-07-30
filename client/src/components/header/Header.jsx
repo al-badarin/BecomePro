@@ -14,9 +14,18 @@ export default function Header() {
     <header className="header_section">
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg custom_nav-container ">
-          {/* LOGO */}
-          <Link className="navbar-brand" to="/">
-            <span>BecomePro</span>
+        {/* LOGO */}
+        <Link className="navbar-brand" to="/">
+            <div className={styles.logoContainer}>
+              <img 
+                src="/images/white-football-logo-1.png" 
+                alt="Football Logo" 
+                className={styles.logoImage} 
+              />
+
+<span className={styles.brandName}>BecomePro</span>
+
+            </div>
           </Link>
 
           {/* TOGGLER */}

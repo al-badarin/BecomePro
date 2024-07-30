@@ -1,3 +1,20 @@
 span.username {
   color: white;
 }
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.logoImage {
+  width: 80px;
+  height: auto;
+}
