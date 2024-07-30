@@ -96,9 +96,26 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-image: url(../images/hero-bg.jpg);
+  background-image: url(../images/hero-img-football-gym.webp);
   background-size: cover;
   background-attachment: fixed;
+}
+
+.hero_area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(0, 0, 0, 0.6);  */
+  background: rgba(83, 39, 52, 0.75); 
+  z-index: 1; 
+}
+
+.hero_area > * {
+  position: relative;
+  z-index: 2;
 }
 
 .sub_page .hero_area {
