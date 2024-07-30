@@ -65,10 +65,10 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('../images/hero-img-football-gym2.png');
+  background-image: url('../images/hero-img-football-gym3.png');
   background-size: cover;
-  background-attachment: fixed;
-  overflow: hidden;
+  /* background-attachment: fixed; */
+  /* overflow: hidden; */
 }
 
 .hero_area::before {
