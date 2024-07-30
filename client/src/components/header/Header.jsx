@@ -14,17 +14,16 @@ export default function Header() {
     <header className="header_section">
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg custom_nav-container ">
-        {/* LOGO */}
-        <Link className="navbar-brand" to="/">
+          {/* LOGO */}
+          <Link className="navbar-brand" to="/">
             <div className={styles.logoContainer}>
-              <img 
-                src="/images/white-football-logo-1.png" 
-                alt="Football Logo" 
-                className={styles.logoImage} 
+              <img
+                src="/images/logo.png"
+                alt="Football Logo"
+                className={styles.logoImage}
               />
 
-<span className={styles.brandName}>BecomePro</span>
-
+              <span className={styles.brandName}>BecomePro</span>
             </div>
           </Link>
 
@@ -52,28 +51,40 @@ export default function Header() {
                 </li>
 
                 {/* ARTICLES  */}
-                <li className={`nav-item ${isActive('/articles') ? 'active' : ''}`}>
+                <li
+                  className={`nav-item ${
+                    isActive('/articles') ? 'active' : ''
+                  }`}
+                >
                   <Link className="nav-link" to="/articles">
                     Articles Catalog
                   </Link>
                 </li>
 
                 {/* ABOUT  */}
-                <li className={`nav-item ${isActive('/about') ? 'active' : ''}`}>
+                <li
+                  className={`nav-item ${isActive('/about') ? 'active' : ''}`}
+                >
                   <Link className="nav-link" to="/about">
                     Why us
                   </Link>
                 </li>
 
                 {/* TRAINERS  */}
-                <li className={`nav-item ${isActive('/trainers') ? 'active' : ''}`}>
+                <li
+                  className={`nav-item ${
+                    isActive('/trainers') ? 'active' : ''
+                  }`}
+                >
                   <Link className="nav-link" to="/trainers">
                     Trainers
                   </Link>
                 </li>
 
                 {/* CONTACT  */}
-                <li className={`nav-item ${isActive('/contact') ? 'active' : ''}`}>
+                <li
+                  className={`nav-item ${isActive('/contact') ? 'active' : ''}`}
+                >
                   <Link className="nav-link" to="/contact">
                     Contact Us
                   </Link>
@@ -82,14 +93,22 @@ export default function Header() {
                 {isAuthenticated && (
                   <>
                     {/* CREATE */}
-                    <li className={`nav-item ${isActive('/articles/create') ? 'active' : ''}`}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/articles/create') ? 'active' : ''
+                      }`}
+                    >
                       <Link className="nav-link" to="/articles/create">
                         Create Article
                       </Link>
                     </li>
 
                     {/* LOGOUT */}
-                    <li className={`nav-item ${isActive('/logout') ? 'active' : ''}`}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/logout') ? 'active' : ''
+                      }`}
+                    >
                       <Link className="nav-link" to="/logout">
                         Logout
                       </Link>
@@ -100,14 +119,22 @@ export default function Header() {
                 {!isAuthenticated && (
                   <>
                     {/* LOGIN  */}
-                    <li className={`nav-item ${isActive('/login') ? 'active' : ''}`}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/login') ? 'active' : ''
+                      }`}
+                    >
                       <Link className="nav-link" to="/login">
                         Login
                       </Link>
                     </li>
 
                     {/* REGISTER  */}
-                    <li className={`nav-item ${isActive('/register') ? 'active' : ''}`}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/register') ? 'active' : ''
+                      }`}
+                    >
                       <Link className="nav-link" to="/register">
                         Register
                       </Link>

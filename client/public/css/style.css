@@ -60,15 +60,15 @@ body {
 }
 
 /*header section*/
-/* .hero_area {
-  position: relative; 
+.hero_area {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('../images/jim-sprint-2.jpg');
+  background-image: url('../images/hero-img-football-gym2.png');
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .hero_area::before {
@@ -78,15 +78,17 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: 1; 
+  background: rgba(83, 39, 52, 0.75);
+
+  z-index: 1;
 }
 
 .hero_area > * {
   position: relative;
   z-index: 2;
-} */
+}
 
+/* 
 .hero_area {
   height: 100vh;
   display: -webkit-box;
@@ -108,15 +110,15 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(0, 0, 0, 0.6);  */
-  background: rgba(83, 39, 52, 0.75); 
-  z-index: 1; 
+  background: rgba(83, 39, 52, 0.75);
+  z-index: 1;
 }
 
 .hero_area > * {
   position: relative;
   z-index: 2;
 }
+*/
 
 .sub_page .hero_area {
   height: auto;
@@ -130,7 +132,51 @@ body {
   height: auto;
 }
 
+.header_section {
+  background-color: #522633;
+  /* padding: 10px 0; */
+}
+
+.navbar {
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+  color: #ffcc00;
+}
+
+.nav-item.active .nav-link {
+  font-weight: bold;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav_search-btn {
+  color: white;
+}
+
 .header_section .container-fluid {
+  /* display: flex;
+  justify-content: space-between; */
+
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -142,7 +188,7 @@ body {
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
   margin: 10px 30px;
   padding: 0;
-  padding-bottom: 3px;
+  /* padding-bottom: 3px; */
   color: #ffffff;
   text-align: center;
   position: relative;
@@ -232,7 +278,7 @@ a:focus {
 
 .custom_nav-container {
   z-index: 99999;
-  padding: 15px 0;
+  /* padding: 15px 0; */
 }
 
 .custom_nav-container .navbar-toggler {

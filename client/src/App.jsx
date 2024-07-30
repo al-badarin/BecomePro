@@ -26,12 +26,9 @@ const App = () => {
   return (
     <ErrorBoundary>
       <AuthProvider>
-        <div className="hero_area">
+        <main>
           <Header />
-          <HeroSlider />
-        </div>
 
-        <>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/articles" element={<ArticleCatalog />} />
@@ -60,7 +57,7 @@ const App = () => {
             {/* 404 Page */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </>
+        </main>
 
         <Footer />
       </AuthProvider>
