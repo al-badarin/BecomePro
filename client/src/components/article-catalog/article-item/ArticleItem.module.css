@@ -17,7 +17,8 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 600;
   margin-bottom: 8px;
   color: #522633;
   position: relative;
