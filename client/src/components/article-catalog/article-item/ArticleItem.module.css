@@ -1,50 +1,95 @@
 .article {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
 }
 
 .article:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.title {
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: #333;
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid #522633;
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.1);
+}
+
+.textContainer {
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  color: #522633;
+  background: linear-gradient(45deg, #522633, #8f5d7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.title:hover::before {
+  left: 100%;
+}
+
+.title:hover {
+  color: #8f5d7d;
+  transform: translateY(-2px);
 }
 
 .content {
-  font-size: 16px;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-.details-button {
+.detailsButton {
   display: inline-block;
   padding: 10px 20px;
-  border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #522633;
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.details-button:hover {
-  background-color: #0056b3;
+.detailsButton:hover {
+  color: white;
+  background-color: #7a3750;
+  transform: translateY(-2px);
 }
