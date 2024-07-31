@@ -1472,6 +1472,30 @@
         imageUrl: 'https://i.ytimg.com/vi/O6FGdr0M19U/maxresdefault.jpg',
         _createdOn: Date.now(),
       },
+      'd4e5f6g7-h8i9-0123-4567-890123abcdef': {
+        _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+        title: 'The Importance of Recovery in Football Training',
+        content:
+          'Recovery is just as important as training for football players. This article discusses various recovery techniques including stretching, foam rolling, and proper sleep to enhance performance and prevent injuries...',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP4p_u2HI7G4AAtRj-_b8ptFtrgBHuY9FEA&s',
+        _createdOn: Date.now(),
+      },
+      'e5f6g7h8-i9j0-1234-5678-901234abcdef': {
+        _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
+        title: 'Mental Training for Football Players',
+        content:
+          'Mental toughness can make a significant difference on the field. This guide explores strategies for building resilience, handling pressure, and maintaining focus during matches...',
+        imageUrl: 'https://files.oaiusercontent.com/file-7ASxG3VaNnrpygxOUyVFqz0n?se=2024-07-31T22%3A02%3A35Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc242b490-8ad1-477b-a794-f2fec5b442de.webp&sig=lKXwM34qsuq%2BJ2iVZAYRGWOd/87D2KlEWGHQK0OFyRk%3D',
+        _createdOn: Date.now(),
+      },
+      'f6g7h8i9-j0k1-2345-6789-012345abcdef': {
+        _ownerId: '60f0cf0b-34b0-4abd-9769-8c42f830dffc',
+        title: 'Building Endurance for Football',
+        content:
+          'Endurance is key for football players to perform at their best for the entire duration of a match. This article provides training tips and workout plans to increase stamina and overall fitness...',
+        imageUrl: 'https://i.ytimg.com/vi/XxKLHd1_oVs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJX4eaYw1-CrV1bne78th4UUcwmg',
+        _createdOn: Date.now(),
+      },
     },
     recipes: {
       '3987279d-0ad4-4afb-8ca9-5b256ae3b298': {
