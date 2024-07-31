@@ -36,7 +36,7 @@ export default function ArticleCreate() {
       }
     },
   });
-
+  
   return (
     <div className={styles.articleCreate}>
       <h1 className={styles.title}>Create Article</h1>
