@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
 import AuthContext from '../../contexts/authContext';
 import { Link } from 'react-router-dom';
+
+import styles from './Register.module.css';
 
 export default function Register() {
   const { registerSubmitHandler, errorMessage } = useContext(AuthContext);
@@ -34,17 +37,20 @@ export default function Register() {
   });
 
   return (
-    <div className="container mt-5">
+    <div className={styles.container}>
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-header">
+          <div className={styles.card}>
+            <div className={styles.cardHeader}>
               <h3>Register</h3>
             </div>
-            <div className="card-body">
+            <div className={styles.cardBody}>
               {/* ERROR MESSAGE */}
               {errorMessage && (
-                <div className="alert alert-danger" role="alert">
+                <div
+                  className={`alert alert-danger ${styles.alert}`}
+                  role="alert"
+                >
                   {errorMessage}
                 </div>
               )}
@@ -67,7 +73,6 @@ export default function Register() {
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                   />
-
                   {/* EMAIL ERRORS */}
                   {formik.touched.email && formik.errors.email ? (
                     <div className="invalid-feedback">
@@ -93,7 +98,6 @@ export default function Register() {
                     onBlur={formik.handleBlur}
                     value={formik.values.username}
                   />
-
                   {/* USERNAME ERRORS */}
                   {formik.touched.username && formik.errors.username ? (
                     <div className="invalid-feedback">
@@ -119,7 +123,6 @@ export default function Register() {
                     onBlur={formik.handleBlur}
                     value={formik.values.password}
                   />
-
                   {/* PASSWORD ERRORS */}
                   {formik.touched.password && formik.errors.password ? (
                     <div className="invalid-feedback">
@@ -145,7 +148,6 @@ export default function Register() {
                     onBlur={formik.handleBlur}
                     value={formik.values.repassword}
                   />
-
                   {/* REPASSWORD ERRORS */}
                   {formik.touched.repassword && formik.errors.repassword ? (
                     <div className="invalid-feedback">
@@ -154,13 +156,20 @@ export default function Register() {
                   ) : null}
                 </div>
 
-                <button type="submit" className="btn btn-primary mt-3">
+                <button
+                  type="submit"
+                  className={`btn ${styles.btnSubmit} mt-3`}
+                >
                   Register
                 </button>
               </form>
               <div className="mt-3">
                 <p>
-                  Already have an account? <Link to="/login">Login here</Link>.
+                  Already have an account?{' '}
+                  <Link to="/login" className={styles.link}>
+                    Login here
+                  </Link>
+                  .
                 </p>
               </div>
             </div>

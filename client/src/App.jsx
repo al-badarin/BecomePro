@@ -44,8 +44,7 @@ const App = () => {
             <Route element={<AuthGuard />}>
               <Route path="/articles/create" element={<ArticleCreate />} />
               <Route
-                path="/articles/:articleId/edit"
-                element={<ArticleEdit />}
+                path="/articles/:articleId/edit" element={<ArticleEdit />}
               />
               <Route path="/logout" element={<Logout />} />
             </Route>
