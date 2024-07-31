@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import AuthContext from '../../contexts/authContext';
 import { Link } from 'react-router-dom';
 
+import styles from './Login.module.css';
+
 export default function Login() {
   const { loginSubmitHandler, errorMessage } = useContext(AuthContext);
 
@@ -27,17 +29,20 @@ export default function Login() {
   });
 
   return (
-    <div className="container mt-5">
+    <div className={styles.container}>
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-header">
+          <div className={styles.card}>
+            <div className={styles.cardHeader}>
               <h3>Login</h3>
             </div>
-            <div className="card-body">
+            <div className={styles.cardBody}>
               {/* ERROR MESSAGE */}
               {errorMessage && (
-                <div className="alert alert-danger" role="alert">
+                <div
+                  className={`alert alert-danger ${styles.alert}`}
+                  role="alert"
+                >
                   {errorMessage}
                 </div>
               )}
@@ -59,7 +64,6 @@ export default function Login() {
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                   />
-
                   {/* EMAIL ERRORS */}
                   {formik.touched.email && formik.errors.email ? (
                     <div className="invalid-feedback">
@@ -85,7 +89,6 @@ export default function Login() {
                     onBlur={formik.handleBlur}
                     value={formik.values.password}
                   />
-
                   {/* PASSWORD ERRORS */}
                   {formik.touched.password && formik.errors.password ? (
                     <div className="invalid-feedback">
@@ -93,17 +96,21 @@ export default function Login() {
                     </div>
                   ) : null}
                 </div>
-                
+
+                {/* SUBMIT BUTTON */}
                 <input
                   type="submit"
-                  className="btn btn-primary mt-3"
+                  className={`btn ${styles.btnSubmit} mt-3`}
                   value="Login"
                 />
               </form>
               <div className="mt-3">
                 <p>
                   Don't have an account?{' '}
-                  <Link to="/register">Sign up here</Link>.
+                  <Link to="/register" className={styles.link}>
+                    Sign up here
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
