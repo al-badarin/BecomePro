@@ -1451,7 +1451,7 @@
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         title: 'How to Train in the Gym as a Football Player',
         content:
-          'Football players need a mix of strength, speed, and endurance. This guide covers gym routines tailored for football players, focusing on compound movements, agility drills, and endurance training...',
+          'Football players need a mix of strength, speed, and endurance. This guide covers gym routines tailored for football players, focusing on compound movements, agility drills, and endurance training. Specifically, it suggests exercises like squats, deadlifts, and bench presses for strength, ladder drills for agility, and interval running for endurance. Proper form and technique are emphasized to prevent injuries. The guide also touches on the importance of recovery and nutrition in achieving optimal results, including protein intake for muscle repair and carbs for energy replenishment.',
         imageUrl:
           'https://qph.cf2.quoracdn.net/main-qimg-16f0449ab3918a3b5d997eacb5425a94-lq',
         _createdOn: Date.now(),
@@ -1460,7 +1460,7 @@
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         title: 'What a Football Player Should Eat in a Day',
         content:
-          "Nutrition plays a critical role in a football player's performance. This article provides a meal plan that includes the right balance of carbohydrates, proteins, and fats to fuel intense training and matches...",
+          "Nutrition plays a critical role in a football player's performance. This article provides a meal plan that includes the right balance of carbohydrates, proteins, and fats to fuel intense training and matches. Key dietary components include lean proteins for muscle repair, complex carbs for sustained energy, and healthy fats for overall health. The guide emphasizes hydration and suggests specific foods and meal timings to optimize performance and recovery. Supplements like whey protein and creatine are also discussed for their potential benefits.",
         imageUrl: 'https://i.ytimg.com/vi/PFta-Wl-5WQ/maxresdefault.jpg',
         _createdOn: Date.now(),
       },
@@ -1468,7 +1468,7 @@
         _ownerId: '60f0cf0b-34b0-4abd-9769-8c42f830dffc',
         title: 'How to Become a Faster Football Player',
         content:
-          'Speed is essential in football. This article outlines training techniques and drills to improve your sprinting speed, agility, and overall quickness on the field...',
+          'Speed is essential in football. This article outlines training techniques and drills to improve your sprinting speed, agility, and overall quickness on the field. It includes exercises like sprint intervals, plyometrics, and resistance training to enhance explosive power. Agility drills such as cone drills and ladder work help in improving quick directional changes. The importance of proper warm-up routines, dynamic stretching, and recovery protocols is also highlighted to prevent injuries and maximize speed gains. The article also discusses the psychological aspects of speed, such as confidence and visualization techniques.',
         imageUrl: 'https://i.ytimg.com/vi/O6FGdr0M19U/maxresdefault.jpg',
         _createdOn: Date.now(),
       },
@@ -1476,24 +1476,27 @@
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         title: 'The Importance of Recovery in Football Training',
         content:
-          'Recovery is just as important as training for football players. This article discusses various recovery techniques including stretching, foam rolling, and proper sleep to enhance performance and prevent injuries...',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP4p_u2HI7G4AAtRj-_b8ptFtrgBHuY9FEA&s',
+          'Recovery is just as important as training for football players. This article discusses various recovery techniques including stretching, foam rolling, and proper sleep to enhance performance and prevent injuries. It highlights the role of active recovery, such as light jogging and swimming, to facilitate muscle repair and reduce soreness. The article also covers the benefits of sports massages, cryotherapy, and hydration in the recovery process. Tips on nutrition for recovery, including the timing of meals and supplements like BCAAs, are provided to ensure athletes recover efficiently and are ready for the next session.',
+        imageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP4p_u2HI7G4AAtRj-_b8ptFtrgBHuY9FEA&s',
         _createdOn: Date.now(),
       },
       'e5f6g7h8-i9j0-1234-5678-901234abcdef': {
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         title: 'Mental Training for Football Players',
         content:
-          'Mental toughness can make a significant difference on the field. This guide explores strategies for building resilience, handling pressure, and maintaining focus during matches...',
-        imageUrl: 'https://files.oaiusercontent.com/file-7ASxG3VaNnrpygxOUyVFqz0n?se=2024-07-31T22%3A02%3A35Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc242b490-8ad1-477b-a794-f2fec5b442de.webp&sig=lKXwM34qsuq%2BJ2iVZAYRGWOd/87D2KlEWGHQK0OFyRk%3D',
+          'Mental toughness can make a significant difference on the field. This guide explores strategies for building resilience, handling pressure, and maintaining focus during matches. Techniques such as visualization, mindfulness, and goal-setting are discussed as ways to enhance mental preparedness. The importance of positive self-talk and coping mechanisms for dealing with setbacks is also covered. The article provides insights into maintaining mental health and well-being, which are crucial for peak performance. Additionally, it explores how maintaining a positive mindset can influence teamwork and leadership qualities on the field.',
+        imageUrl:
+          'https://files.oaiusercontent.com/file-7ASxG3VaNnrpygxOUyVFqz0n?se=2024-07-31T22%3A02%3A35Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc242b490-8ad1-477b-a794-f2fec5b442de.webp&sig=lKXwM34qsuq%2BJ2iVZAYRGWOd/87D2KlEWGHQK0OFyRk%3D',
         _createdOn: Date.now(),
       },
       'f6g7h8i9-j0k1-2345-6789-012345abcdef': {
         _ownerId: '60f0cf0b-34b0-4abd-9769-8c42f830dffc',
         title: 'Building Endurance for Football',
         content:
-          'Endurance is key for football players to perform at their best for the entire duration of a match. This article provides training tips and workout plans to increase stamina and overall fitness...',
-        imageUrl: 'https://i.ytimg.com/vi/XxKLHd1_oVs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJX4eaYw1-CrV1bne78th4UUcwmg',
+          'Endurance is key for football players to perform at their best for the entire duration of a match. This article provides training tips and workout plans to increase stamina and overall fitness. It includes aerobic exercises such as long-distance running, cycling, and swimming to build cardiovascular endurance. The importance of high-intensity interval training (HIIT) for improving anaerobic capacity is also discussed. Nutritional advice and recovery strategies to support endurance training are covered, emphasizing hydration and balanced meals to sustain energy levels throughout training and games.',
+        imageUrl:
+          'https://i.ytimg.com/vi/XxKLHd1_oVs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJX4eaYw1-CrV1bne78th4UUcwmg',
         _createdOn: Date.now(),
       },
     },
