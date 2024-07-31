@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from './components/home/Home';
 import Header from './components/header/Header';
-import HeroSlider from './components/hero-slider/HeroSlider';
 import ArticleCatalog from './components/article-catalog/ArticleCatalog';
 import ArticleDetails from './components/article-details/ArticleDetails';
 import ArticleCreate from './components/article-create/ArticleCreate';
