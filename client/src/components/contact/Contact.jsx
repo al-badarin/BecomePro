@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useNavigate } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,29 +7,39 @@ import styles from './Contact.module.css';
 
 export default function Contact() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Simulate a successful form submission
-    setTimeout(() => {
-      toast.success('Message sent successfully!');
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .min(2, 'Name must be at least 2 characters')
+        .required('Name is required'),
+      email: Yup.string()
+        .email('Invalid email address')
+        .required('Email is required'),
+      phone: Yup.string()
+        .min(10, 'Phone number must be at least 10 digits')
+        .required('Phone number is required'),
+      message: Yup.string()
+        .min(10, 'Message must be at least 10 characters')
+        .required('Message is required'),
+    }),
+    onSubmit: (values, { setSubmitting }) => {
+      // Simulate a successful form submission
       setTimeout(() => {
-        navigate('/');
-      }, 2000);
-    }, 1000);
-  };
+        toast.success('Message sent successfully!');
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
+        setSubmitting(false);
+      }, 1000);
+    },
+  });
 
   return (
     <>
@@ -47,46 +58,71 @@ export default function Contact() {
                 <div className={styles.headingContainer}>
                   <h2>Contact Us</h2>
                 </div>
-                <form onSubmit={handleSubmit}>
-                  <div>
+                <form onSubmit={formik.handleSubmit}>
+                  {/* NAME */}
+                  <div className={styles.formGroup}>
                     <input
                       type="text"
                       name="name"
                       placeholder="Name"
-                      value={formData.name}
-                      onChange={handleChange}
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className={`${styles.input} ${formik.touched.name && formik.errors.name ? styles.invalid : ''}`}
                     />
+                    {formik.touched.name && formik.errors.name ? (
+                      <div className={styles.error}>{formik.errors.name}</div>
+                    ) : null}
                   </div>
-                  <div>
+                  {/* EMAIL */}
+                  <div className={styles.formGroup}>
                     <input
                       type="email"
                       name="email"
                       placeholder="Email"
-                      value={formData.email}
-                      onChange={handleChange}
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className={`${styles.input} ${formik.touched.email && formik.errors.email ? styles.invalid : ''}`}
                     />
+                    {formik.touched.email && formik.errors.email ? (
+                      <div className={styles.error}>{formik.errors.email}</div>
+                    ) : null}
                   </div>
-                  <div>
+                  {/* PHONE */}
+                  <div className={styles.formGroup}>
                     <input
                       type="text"
                       name="phone"
                       placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleChange}
+                      value={formik.values.phone}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className={`${styles.input} ${formik.touched.phone && formik.errors.phone ? styles.invalid : ''}`}
                     />
+                    {formik.touched.phone && formik.errors.phone ? (
+                      <div className={styles.error}>{formik.errors.phone}</div>
+                    ) : null}
                   </div>
-                  <div>
+                  {/* MESSAGE */}
+                  <div className={styles.formGroup}>
                     <input
                       type="text"
                       name="message"
-                      className={styles.messageBox}
+                      className={`${styles.messageBox} ${formik.touched.message && formik.errors.message ? styles.invalid : ''}`}
                       placeholder="Message"
-                      value={formData.message}
-                      onChange={handleChange}
+                      value={formik.values.message}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
+                    {formik.touched.message && formik.errors.message ? (
+                      <div className={styles.error}>{formik.errors.message}</div>
+                    ) : null}
                   </div>
                   <div className="d-flex ">
-                    <button type="submit">Send</button>
+                    <button type="submit" className={styles.button} disabled={formik.isSubmitting}>
+                      Send
+                    </button>
                   </div>
                 </form>
               </div>
