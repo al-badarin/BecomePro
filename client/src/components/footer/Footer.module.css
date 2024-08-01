@@ -1,0 +1,34 @@
+.footer_section {
+  background: linear-gradient(135deg, #522633, #7a3750);
+  color: #f3f3f3;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer_section p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer_section a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer_section {
+    padding: 15px 0;
+  }
+
+  .footer_section p {
+    font-size: 0.9rem;
+  }
+}
