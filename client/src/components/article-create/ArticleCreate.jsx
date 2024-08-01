@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import * as articleService from '../../services/articleService';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import LoadingSpinner from '../loading-spinner/LoadingSpinner';
+
+import * as articleService from '../../services/articleService';
+
 import styles from './ArticleCreate.module.css';
 
 export default function ArticleCreate() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -13,6 +19,7 @@ export default function ArticleCreate() {
       content: '',
       imageUrl: '',
     },
+
     validationSchema: Yup.object({
       title: Yup.string()
         .min(5, 'Title must be between 5 and 50 characters')
@@ -25,7 +32,10 @@ export default function ArticleCreate() {
         .url('Invalid URL format')
         .required('Image URL is required'),
     }),
+
     onSubmit: async (values, { setSubmitting }) => {
+      setLoading(true);
+
       try {
         await articleService.create(values);
         navigate('/articles');
@@ -36,7 +46,11 @@ export default function ArticleCreate() {
       }
     },
   });
-  
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className={styles.articleCreate}>
       <h1 className={styles.title}>Create Article</h1>
