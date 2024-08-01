@@ -1478,7 +1478,7 @@
         content:
           'Recovery is just as important as training for football players. This article discusses various recovery techniques including stretching, foam rolling, and proper sleep to enhance performance and prevent injuries. It highlights the role of active recovery, such as light jogging and swimming, to facilitate muscle repair and reduce soreness. The article also covers the benefits of sports massages, cryotherapy, and hydration in the recovery process. Tips on nutrition for recovery, including the timing of meals and supplements like BCAAs, are provided to ensure athletes recover efficiently and are ready for the next session.',
         imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIP4p_u2HI7G4AAtRj-_b8ptFtrgBHuY9FEA&s',
+          'https://httacademy.co.uk/wp-content/uploads/2024/05/top-5-tips-to-reduce-injury-risk-and-improve-recovery-for-footballers-205670.jpg',
         _createdOn: Date.now(),
       },
       'e5f6g7h8-i9j0-1234-5678-901234abcdef': {
@@ -1487,7 +1487,7 @@
         content:
           'Mental toughness can make a significant difference on the field. This guide explores strategies for building resilience, handling pressure, and maintaining focus during matches. Techniques such as visualization, mindfulness, and goal-setting are discussed as ways to enhance mental preparedness. The importance of positive self-talk and coping mechanisms for dealing with setbacks is also covered. The article provides insights into maintaining mental health and well-being, which are crucial for peak performance. Additionally, it explores how maintaining a positive mindset can influence teamwork and leadership qualities on the field.',
         imageUrl:
-          'https://files.oaiusercontent.com/file-7ASxG3VaNnrpygxOUyVFqz0n?se=2024-07-31T22%3A02%3A35Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc242b490-8ad1-477b-a794-f2fec5b442de.webp&sig=lKXwM34qsuq%2BJ2iVZAYRGWOd/87D2KlEWGHQK0OFyRk%3D',
+          'https://rochemamabolo.wordpress.com/wp-content/uploads/2023/02/fpvhml2wiaimfi_.jpg',
         _createdOn: Date.now(),
       },
       'f6g7h8i9-j0k1-2345-6789-012345abcdef': {
