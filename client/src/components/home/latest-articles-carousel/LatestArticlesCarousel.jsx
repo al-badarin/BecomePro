@@ -4,6 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import * as articleService from '../../../services/articleService';
+import { truncateText } from '../../../utils/textTrucation';
+
 import styles from './LatestArticlesCarousel.module.css';
 
 export default function LatestArticlesCarousel() {
@@ -25,7 +27,7 @@ export default function LatestArticlesCarousel() {
       >
         {articles.map((article) => (
           <div key={article._id} className={styles.slide}>
-            <Link  to={`/articles/${article._id}`}>
+            <Link to={`/articles/${article._id}`}>
               <div className={styles.imageContainer}>
                 <img
                   src={article.imageUrl}
@@ -35,7 +37,9 @@ export default function LatestArticlesCarousel() {
               </div>
               <div className={styles.overlay}>
                 <h3 className={styles.articleTitle}>{article.title}</h3>
-                <p className={styles.content}>{article.content}</p>
+                <p className={styles.content}>
+                  {truncateText(article.content, 200)}
+                </p>
               </div>
             </Link>
           </div>
