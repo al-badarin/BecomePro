@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import LoadingSpinner from '../loading-spinner/LoadingSpinner';
-import ArticleItem from './article-item/ArticleItem';
+import ArticleItem from './article-item/ArticleItem'; 
 
 import * as articleService from '../../services/articleService';
 
