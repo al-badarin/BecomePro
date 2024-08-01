@@ -5,6 +5,7 @@ import * as articleService from '../../services/articleService';
 import * as likeService from '../../services/likeService';
 
 import AuthContext from '../../contexts/authContext';
+import LoadingSpinner from '../loading-spinner/LoadingSpinner';
 
 import styles from './ArticleDetails.module.css';
 
@@ -13,6 +14,7 @@ export default function ArticleDetails() {
   const { userId, isAuthenticated } = useContext(AuthContext);
   const { articleId } = useParams();
   const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [likeCount, setLikeCount] = useState(0);
   const [userHasLiked, setUserHasLiked] = useState(false);
   const [userLikeId, setUserLikeId] = useState(null);
@@ -22,9 +24,11 @@ export default function ArticleDetails() {
       .getOne(articleId)
       .then((result) => {
         setArticle(result);
+        setLoading(false);
       })
       .catch((err) => {
         console.error('Failed to fetch article details', err);
+        setLoading(false);
         navigate('/404');
       });
 
@@ -95,9 +99,8 @@ export default function ArticleDetails() {
     }
   };
 
-  //   TODO: style the <p> loading bar
-  if (!article) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <LoadingSpinner />;
   }
 
   return (
