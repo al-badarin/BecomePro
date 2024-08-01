@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-
-import styles from './ArticleCatalog.module.css';
+import LoadingSpinner from '../loading-spinner/LoadingSpinner';
+import ArticleItem from './article-item/ArticleItem';
 
 import * as articleService from '../../services/articleService';
-import ArticleItem from './article-item/ArticleItem';
+
+import styles from './ArticleCatalog.module.css';
 
 export default function ArticleCatalog() {
   const [articles, setArticles] = useState([]);
@@ -23,9 +24,8 @@ export default function ArticleCatalog() {
       });
   }, []);
 
-  // TODO: style loading spinner
   if (loading) {
-    return <p>Loading...</p>;
+    return <LoadingSpinner />;
   }
 
   // TODO: style error handling messages / separate component? / use Formik
