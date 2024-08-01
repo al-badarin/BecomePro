@@ -5,15 +5,30 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import * as articleService from '../../../services/articleService';
 import { truncateText } from '../../../utils/textTrucation';
+import LoadingSpinner from '../../loading-spinner/LoadingSpinner';
 
 import styles from './LatestArticlesCarousel.module.css';
 
 export default function LatestArticlesCarousel() {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    articleService.getLatest().then(setArticles).catch(console.error);
+    articleService
+      .getLatest()
+      .then((result) => {
+        setArticles(result);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className={styles.carouselContainer}>
