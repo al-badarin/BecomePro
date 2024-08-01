@@ -1,11 +1,12 @@
-header{
+header {
   margin: 30px 0;
+  background: linear-gradient(to right, #522633, #7a3750);
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-span.username {
-  color: white;
-}
-
+/* Styling for the logo container */
 .logoContainer {
   display: flex;
   flex-direction: column;
@@ -13,13 +14,101 @@ span.username {
   text-align: center;
 }
 
+/* Styling for the brand name */
 .brandName {
   font-size: 1.5rem;
   color: #ffffff;
+  margin-top: 10px; /* Add some spacing between the logo and the brand name */
+  font-weight: bold;
 }
 
+/* Styling for the logo image */
 .logoImage {
   width: 80px;
   height: auto;
 }
 
+/* Styling for the navigation bar */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Styling for navigation items */
+.nav-item {
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-item .nav-link {
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* Styling for active navigation items */
+.nav-item.active .nav-link {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Styling for the username */
+span.username {
+  color: #f3f3f3;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+/* Styling for the search button */
+.nav_search-btn {
+  background: transparent;
+  border: none;
+  color: #f3f3f3;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav_search-btn:hover {
+  color: #ffd700;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .logoContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brandName {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-item .nav-link {
+    font-size: 1rem;
+  }
+
+  span.username {
+    margin-left: 10px;
+  }
+}
