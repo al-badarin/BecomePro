@@ -21,11 +21,13 @@ import ErrorBoundary from './components/errors/error-boundary/ErrorBoundary';
 import NotAuthorized from './components/errors/error-401/NotAuthorized';
 import NotFound from './components/errors/error-404/NotFound';
 
+import styles from './App.module.css';
+
 const App = () => {
   return (
     <ErrorBoundary>
       <AuthProvider>
-        <main>
+        <main className={styles.main}>
           <Header />
 
           <Routes>
@@ -44,7 +46,8 @@ const App = () => {
             <Route element={<AuthGuard />}>
               <Route path="/articles/create" element={<ArticleCreate />} />
               <Route
-                path="/articles/:articleId/edit" element={<ArticleEdit />}
+                path="/articles/:articleId/edit"
+                element={<ArticleEdit />}
               />
               <Route path="/logout" element={<Logout />} />
             </Route>
