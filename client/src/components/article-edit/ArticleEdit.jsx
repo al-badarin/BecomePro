@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 import * as articleService from '../../services/articleService';
 import AuthContext from '../../contexts/authContext';
+import LoadingSpinner from '../loading-spinner/LoadingSpinner';
 
 import styles from './ArticleEdit.module.css';
 
@@ -14,6 +15,7 @@ export default function ArticleEdit() {
   const { articleId } = useParams();
   const [initialValues, setInitialValues] = useState(null);
   const [isOwner, setIsOwner] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     articleService
@@ -27,9 +29,11 @@ export default function ArticleEdit() {
           alert('You are not authorized to edit this article.');
           navigate('/401');
         }
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
+        setLoading(false);
         navigate('/404');
       });
   }, [articleId, userId, navigate]);
@@ -71,11 +75,10 @@ export default function ArticleEdit() {
     },
   });
 
-  // todo: add styling for the spinner
-  if (!initialValues) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <LoadingSpinner />;
   }
-
+  
   if (!isOwner) {
     return (
       <p className={styles.unauthorized}>
