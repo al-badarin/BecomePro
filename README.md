@@ -10,7 +10,6 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   - [Server Setup](#server-setup)
   - [Client Setup](#client-setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
 <!-- - [Host](#host) -->
 
 ## Features
@@ -39,17 +38,33 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 
 ## Technologies
 
-- **Frontend**
-  - React
-  - React Router
-  - Formik
-  - Yup
-  - Bootstrap
-  - CSS Modules
-- **Backend**
-  - Node.js
-  - Express
-  - MongoDB (Mongoose)
+### Frontend
+
+<p>
+  <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React" />
+  <img src="https://img.icons8.com/color/48/000000/redux.png" alt="Redux" />
+  <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" />
+  <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap" />
+  <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" />
+  <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5" />
+</p>
+
+### Backend
+
+<p>
+  <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" />
+  <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express" />
+  <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" />
+</p>
+
+### Other
+
+<p>
+  <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" />
+  <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub" />
+  <img src="https://img.icons8.com/color/48/000000/npm.png" alt="NPM" />
+  <img src="https://img.icons8.com/color/48/000000/heroku.png" alt="Heroku" />
+</p>
 
 ## Installation
 
@@ -94,7 +109,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
    npm run dev
    ```
 
-4. Open your browser and go to `http://localhost:3000`.
+4. Open your browser and go to `http://localhost:5173`.
 
 ## Usage
 
@@ -106,17 +121,5 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 - **Delete Article**: Authenticated users can delete their articles.
 - **Contact Us**: Contact form for users to send messages.
 - **User Authentication**: Register and login to access more features.
-
-## Contributing
-
-We welcome contributions to enhance the BecomePro platform. To contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Please make sure to update tests as appropriate.
 
 <!-- ## Host -->
