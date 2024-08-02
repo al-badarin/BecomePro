@@ -42,7 +42,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 
 <p>
   <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React" />
-  <img src="https://img.icons8.com/color/48/000000/redux.png" alt="Redux" />
+  <!-- <img src="https://img.icons8.com/color/48/000000/redux.png" alt="Redux" /> -->
   <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" />
   <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap" />
   <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" />
@@ -54,7 +54,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 <p>
   <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" />
   <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express" />
-  <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" />
+  <!-- <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" /> -->
 </p>
 
 ### Other
@@ -63,7 +63,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" />
   <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub" />
   <img src="https://img.icons8.com/color/48/000000/npm.png" alt="NPM" />
-  <img src="https://img.icons8.com/color/48/000000/heroku.png" alt="Heroku" />
+  <!-- <img src="https://img.icons8.com/color/48/000000/heroku.png" alt="Heroku" /> -->
 </p>
 
 ## Installation
