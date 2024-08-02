@@ -62,4 +62,5 @@ Follow these steps to set up the project on your local machine.
 
 ```sh
 git clone https://github.com/your-username/becomepro.git
+```sh
 cd becomepro/server
