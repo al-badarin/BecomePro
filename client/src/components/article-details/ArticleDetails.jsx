@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import * as articleService from '../../services/articleService';
 import * as likeService from '../../services/likeService';
 
 import AuthContext from '../../contexts/authContext';
 import LoadingSpinner from '../loading-spinner/LoadingSpinner';
+import ConfirmationModal from './confirm-modal/ConfirmationModal';
 
 import styles from './ArticleDetails.module.css';
 
@@ -18,6 +21,7 @@ export default function ArticleDetails() {
   const [likeCount, setLikeCount] = useState(0);
   const [userHasLiked, setUserHasLiked] = useState(false);
   const [userLikeId, setUserLikeId] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     articleService
@@ -52,13 +56,13 @@ export default function ArticleDetails() {
 
   const toggleLikeHandler = async () => {
     if (!isAuthenticated) {
-      alert('You need to be logged in to like articles.');
+      toast.error('You need to be logged in to like articles.');
       navigate('/login');
       return;
     }
 
     if (userId === article._ownerId) {
-      alert('You cannot like your own article.');
+      toast.error('You cannot like your own article.');
       return;
     }
 
@@ -79,24 +83,18 @@ export default function ArticleDetails() {
     }
   };
 
-  const deleteButtonClickHandler = async () => {
-    if (article._ownerId !== userId) {
-      alert('You are not authorized to delete this article.');
-      return;
-    }
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-    const hasConfirmed = confirm(
-      `Are you sure you want to delete the article: '${article.title}'`
-    );
-
-    if (hasConfirmed) {
-      try {
-        await articleService.remove(articleId);
-        navigate('/articles');
-      } catch (error) {
-        console.error('Failed to delete article', error);
-      }
+  const confirmDeleteHandler = async () => {
+    try {
+      await articleService.remove(articleId);
+      navigate('/articles');
+    } catch (error) {
+      console.error('Failed to delete article', error);
+      toast.error('Failed to delete article.');
     }
+    closeModal();
   };
 
   if (loading) {
@@ -130,11 +128,18 @@ export default function ArticleDetails() {
             Edit
           </Link>
 
-          <button className={styles.button} onClick={deleteButtonClickHandler}>
+          <button className={styles.button} onClick={openModal}>
             Delete
           </button>
         </div>
       )}
+
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        onConfirm={confirmDeleteHandler}
+        message={`Are you sure you want to delete the article: '${article.title}'`}
+      />
     </div>
   );
 }
