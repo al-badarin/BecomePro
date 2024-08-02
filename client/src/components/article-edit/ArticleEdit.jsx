@@ -3,6 +3,9 @@ import { useContext, useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import * as articleService from '../../services/articleService';
 import AuthContext from '../../contexts/authContext';
 import LoadingSpinner from '../loading-spinner/LoadingSpinner';
@@ -26,14 +29,14 @@ export default function ArticleEdit() {
           setIsOwner(true);
         } else {
           setIsOwner(false);
-          alert('You are not authorized to edit this article.');
+          toast.error('You are not authorized to edit this article.');
           navigate('/401');
         }
         setLoading(false);
       })
       .catch((err) => {
         console.error(err);
-        setLoading(false);
+        toast.error('Failed to fetch article details.');
         navigate('/404');
       });
   }, [articleId, userId, navigate]);
@@ -59,15 +62,17 @@ export default function ArticleEdit() {
     }),
     onSubmit: async (values, { setSubmitting }) => {
       if (!isOwner) {
-        alert('You are not authorized to edit this article.');
+        toast.error('You are not authorized to edit this article.');
         return;
       }
 
       try {
         await articleService.edit(articleId, values);
+        toast.success('Article updated successfully!');
         navigate(`/articles/${articleId}`);
       } catch (error) {
         console.error('Failed to update article', error);
+        toast.error('Failed to update article.');
         navigate('/401');
       } finally {
         setSubmitting(false);
