@@ -27,6 +27,13 @@ export default function ArticleCreate() {
         .required('Title is required'),
       content: Yup.string()
         .min(10, 'Content must be at least 10 characters long')
+        .test(
+          'has-enough-words',
+          'Content must have at least 10 words',
+          function (value) {
+            return value && value.trim().split(/\s+/).length >= 10;
+          }
+        )
         .required('Content is required'),
       imageUrl: Yup.string()
         .url('Invalid URL format')

@@ -64,6 +64,8 @@
   margin-bottom: 24px;
   color: #555;
   text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .buttons {
