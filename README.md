@@ -11,7 +11,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   - [Client Setup](#client-setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+<!-- - [Host](#host) -->
 
 ## Features
 
@@ -46,7 +46,6 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   - Yup
   - Bootstrap
   - CSS Modules
-
 - **Backend**
   - Node.js
   - Express
@@ -54,13 +53,70 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 
 ## Installation
 
-Follow these steps to set up the project on your local machine.
-
 ### Server Setup
 
 1. Clone the repository:
 
-```sh
-git clone https://github.com/your-username/becomepro.git
-```sh
-cd becomepro/server
+   ```sh
+   git clone https://github.com/your-username/becomepro.git
+   cd becomepro/server
+   ```
+
+2. Install the dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Start the server:
+
+   ```sh
+   node server.js
+   ```
+
+### Client Setup
+
+1. Navigate to the client directory:
+
+   ```sh
+   cd ../client
+   ```
+
+2. Install the dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Start the client:
+
+   ```sh
+   npm run dev
+   ```
+
+4. Open your browser and go to `http://localhost:3000`.
+
+## Usage
+
+- **Home Page**: Overview of the platform and latest articles.
+- **Articles Catalog**: Browse all articles.
+- **Article Details**: View detailed information about an article.
+- **Create Article**: Authenticated users can create new articles.
+- **Edit Article**: Authenticated users can edit their articles.
+- **Delete Article**: Authenticated users can delete their articles.
+- **Contact Us**: Contact form for users to send messages.
+- **User Authentication**: Register and login to access more features.
+
+## Contributing
+
+We welcome contributions to enhance the BecomePro platform. To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
+
+Please make sure to update tests as appropriate.
+
+<!-- ## Host -->
