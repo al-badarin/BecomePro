@@ -1,4 +1,4 @@
-import HeroSlider from '../hero-slider/HeroSlider';
+import HeroSlider from './hero-slider/HeroSlider';
 import LatestArticlesCarousel from './latest-articles-carousel/LatestArticlesCarousel';
 
 export default function Home() {
