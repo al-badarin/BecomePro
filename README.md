@@ -1,4 +1,4 @@
-# BecomePro
+# [BecomePro](https://becomepro-2024.web.app)
 
 Welcome to the BecomePro project repository. BecomePro is a comprehensive platform designed for football players and enthusiasts to enhance their training, nutrition, mental toughness, and overall performance. Our mission is to provide valuable resources and support for football players at all levels.
 
@@ -10,7 +10,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   - [Server Setup](#server-setup)
   - [Client Setup](#client-setup)
 - [Usage](#usage)
-<!-- - [Host](#host) -->
+- [Host](#host)
 
 ## Features
 
@@ -122,4 +122,11 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 - **Contact Us**: Contact form for users to send messages.
 - **User Authentication**: Register and login to access more features.
 
-<!-- ## Host -->
+## Host
+
+The BecomePro platform is hosted on Firebase for both frontend and backend.
+
+- Frontend: Hosted at https://becomepro-2024.web.app
+- Backend: Hosted as Firebase functions
+
+You can see it here: <a href="https://becomepro-2024.web.app">BecomePro</a>
