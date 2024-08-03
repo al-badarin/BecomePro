@@ -53,7 +53,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
 
 <p>
   <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" />
-  <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express" />
+  <!-- <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express" /> -->
   <!-- <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" /> -->
 </p>
 
