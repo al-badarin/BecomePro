@@ -57,7 +57,7 @@ export default function Header() {
                   }`}
                 >
                   <Link className="nav-link" to="/articles">
-                    Articles Catalog
+                    Articles
                   </Link>
                 </li>
 
@@ -66,7 +66,7 @@ export default function Header() {
                   className={`nav-item ${isActive('/about') ? 'active' : ''}`}
                 >
                   <Link className="nav-link" to="/about">
-                    Why us
+                    About us
                   </Link>
                 </li>
 
@@ -145,14 +145,14 @@ export default function Header() {
 
               {/* SEARCH */}
               {/* TODO: move as a separate component */}
-              <div className="user_option">
+              {/* <div className="user_option">
                 <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                   <button
                     className="btn  my-2 my-sm-0 nav_search-btn"
                     type="submit"
                   ></button>
                 </form>
-              </div>
+              </div> */}
 
               {isAuthenticated && (
                 <span className={styles.username}>| {username}</span>
