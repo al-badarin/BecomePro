@@ -1,5 +1,19 @@
 .container {
-  margin-top: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+}
+
+.col {
+  max-width: 700px;
+  padding: 0 15px;
 }
 
 .card {

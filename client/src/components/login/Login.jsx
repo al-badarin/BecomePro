@@ -30,8 +30,8 @@ export default function Login() {
 
   return (
     <div className={styles.container}>
-      <div className="row justify-content-center">
-        <div className="col-md-6">
+      <div className={`row ${styles.row}`}>
+        <div className={`col-md-6 ${styles.col}`}>
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <h3>Login</h3>
