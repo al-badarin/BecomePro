@@ -6,3 +6,23 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.info_items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.imgBox {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: white;
+}
