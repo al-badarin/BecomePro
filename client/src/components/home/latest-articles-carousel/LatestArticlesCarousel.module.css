@@ -73,3 +73,52 @@
 .content {
   font-size: 1rem;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .carouselContainer {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .articleTitle {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .overlay {
+    padding: 10px;
+  }
+
+  .articleTitle {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    font-size: 0.75rem;
+  }
+}
