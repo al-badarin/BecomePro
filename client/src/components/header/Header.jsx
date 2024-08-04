@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+
 import AuthContext from '../../contexts/authContext';
 
 import styles from './Header.module.css';

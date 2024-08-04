@@ -8,7 +8,9 @@ export default function Home() {
       <div className="hero_area">
         <HeroSlider />
       </div>
+
       <LatestArticlesCarousel />
+      
       <AboutUs />
     </>
   );
