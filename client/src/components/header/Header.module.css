@@ -18,7 +18,7 @@ header {
 .brandName {
   font-size: 1.5rem;
   color: #ffffff;
-  margin-top: 10px; /* Add some spacing between the logo and the brand name */
+  margin-top: 10px;
   font-weight: bold;
 }
 
@@ -80,6 +80,11 @@ span.username {
 
 .nav_search-btn:hover {
   color: #ffd700;
+}
+
+/* Ensure the .show class displays the navbar correctly on mobile */
+.navbar-collapse.show {
+  display: block !important;
 }
 
 /* Responsive design for smaller screens */
