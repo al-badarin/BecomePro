@@ -61,7 +61,7 @@ export default function Header() {
                 {/* HOME  */}
                 <li className={`nav-item ${isActive('/') ? 'active' : ''}`}>
                   <Link className="nav-link" to="/" onClick={closeNavbar}>
-                    Home <span className="sr-only">(current)</span>
+                    Home
                   </Link>
                 </li>
 
