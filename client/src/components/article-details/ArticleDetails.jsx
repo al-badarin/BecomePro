@@ -140,6 +140,8 @@ export default function ArticleDetails() {
         onConfirm={confirmDeleteHandler}
         message={`Are you sure you want to delete the article: '${article.title}'`}
       />
+
+      <ToastContainer />
     </div>
   );
 }

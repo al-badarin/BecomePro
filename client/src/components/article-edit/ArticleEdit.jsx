@@ -168,6 +168,7 @@ export default function ArticleEdit() {
           Update
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }
