@@ -52,7 +52,10 @@ export default function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarSupportedContent">
+          <div
+            className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`}
+            id="navbarSupportedContent"
+          >
             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul className="navbar-nav">
                 {/* HOME  */}
@@ -63,29 +66,53 @@ export default function Header() {
                 </li>
 
                 {/* ARTICLES  */}
-                <li className={`nav-item ${isActive('/articles') ? 'active' : ''}`}>
-                  <Link className="nav-link" to="/articles" onClick={closeNavbar}>
+                <li
+                  className={`nav-item ${
+                    isActive('/articles') ? 'active' : ''
+                  }`}
+                >
+                  <Link
+                    className="nav-link"
+                    to="/articles"
+                    onClick={closeNavbar}
+                  >
                     Articles
                   </Link>
                 </li>
 
                 {/* ABOUT  */}
-                <li className={`nav-item ${isActive('/about') ? 'active' : ''}`}>
+                <li
+                  className={`nav-item ${isActive('/about') ? 'active' : ''}`}
+                >
                   <Link className="nav-link" to="/about" onClick={closeNavbar}>
                     About us
                   </Link>
                 </li>
 
                 {/* TRAINERS  */}
-                <li className={`nav-item ${isActive('/trainers') ? 'active' : ''}`}>
-                  <Link className="nav-link" to="/trainers" onClick={closeNavbar}>
+                <li
+                  className={`nav-item ${
+                    isActive('/trainers') ? 'active' : ''
+                  }`}
+                >
+                  <Link
+                    className="nav-link"
+                    to="/trainers"
+                    onClick={closeNavbar}
+                  >
                     Trainers
                   </Link>
                 </li>
 
                 {/* CONTACT  */}
-                <li className={`nav-item ${isActive('/contact') ? 'active' : ''}`}>
-                  <Link className="nav-link" to="/contact" onClick={closeNavbar}>
+                <li
+                  className={`nav-item ${isActive('/contact') ? 'active' : ''}`}
+                >
+                  <Link
+                    className="nav-link"
+                    to="/contact"
+                    onClick={closeNavbar}
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -93,15 +120,31 @@ export default function Header() {
                 {isAuthenticated && (
                   <>
                     {/* CREATE */}
-                    <li className={`nav-item ${isActive('/articles/create') ? 'active' : ''}`}>
-                      <Link className="nav-link" to="/articles/create" onClick={closeNavbar}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/articles/create') ? 'active' : ''
+                      }`}
+                    >
+                      <Link
+                        className="nav-link"
+                        to="/articles/create"
+                        onClick={closeNavbar}
+                      >
                         Create Article
                       </Link>
                     </li>
 
                     {/* LOGOUT */}
-                    <li className={`nav-item ${isActive('/logout') ? 'active' : ''}`}>
-                      <Link className="nav-link" to="/logout" onClick={closeNavbar}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/logout') ? 'active' : ''
+                      }`}
+                    >
+                      <Link
+                        className="nav-link"
+                        to="/logout"
+                        onClick={closeNavbar}
+                      >
                         Logout
                       </Link>
                     </li>
@@ -111,15 +154,31 @@ export default function Header() {
                 {!isAuthenticated && (
                   <>
                     {/* LOGIN  */}
-                    <li className={`nav-item ${isActive('/login') ? 'active' : ''}`}>
-                      <Link className="nav-link" to="/login" onClick={closeNavbar}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/login') ? 'active' : ''
+                      }`}
+                    >
+                      <Link
+                        className="nav-link"
+                        to="/login"
+                        onClick={closeNavbar}
+                      >
                         Login
                       </Link>
                     </li>
 
                     {/* REGISTER  */}
-                    <li className={`nav-item ${isActive('/register') ? 'active' : ''}`}>
-                      <Link className="nav-link" to="/register" onClick={closeNavbar}>
+                    <li
+                      className={`nav-item ${
+                        isActive('/register') ? 'active' : ''
+                      }`}
+                    >
+                      <Link
+                        className="nav-link"
+                        to="/register"
+                        onClick={closeNavbar}
+                      >
                         Register
                       </Link>
                     </li>
