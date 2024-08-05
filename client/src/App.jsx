@@ -6,7 +6,7 @@ import ArticleCatalog from './components/article-catalog/ArticleCatalog';
 import ArticleDetails from './components/article-details/ArticleDetails';
 import ArticleCreate from './components/article-create/ArticleCreate';
 import ArticleEdit from './components/article-edit/ArticleEdit';
-import AboutUs from './components/home/about-us/AboutUs';
+import AboutUs from './components/about-us/AboutUs';
 import Trainers from './components/trainers/Trainers';
 import Contact from './components/contact/Contact';
 import Login from './components/login/Login';
