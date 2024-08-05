@@ -26,14 +26,16 @@
 .slide {
   position: relative;
   text-align: center;
+  min-height: 400px;
 }
 
 .image {
   max-width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
-  max-height: 750px; 
-  object-fit: cover; 
+  max-height: 750px;
+  min-height: 300px;
+  object-fit: cover;
 }
 
 .imageContainer {
@@ -120,5 +122,13 @@
 
   .content {
     font-size: 0.75rem;
+  }
+
+  .slide {
+    min-height: 300px;
+  }
+
+  .image {
+    min-height: 200px;
   }
 }
