@@ -1,7 +1,3 @@
-/* section{
-  margin-top: 30px;
-} */
-
 .layout_padding2 {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -10,19 +6,46 @@
 .info_items {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .item {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .imgBox {
-  font-size: 2rem;
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #522633;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .icon {
-  font-size: 2.5rem;
-  color: white;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.contactLink {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.contactLink:hover {
+  color: #ffd700;
+  transform: scale(1.05);
+}
+
+.contactLink:active {
+  color: #ffd700;
+}
+
+.contactLink:visited {
+  color: #fff;
 }

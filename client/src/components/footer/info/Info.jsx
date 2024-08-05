@@ -11,7 +11,7 @@ export default function Info() {
               <FaMapMarkerAlt className={styles.icon} />
             </div>
             <div className="detail-box">
-              <p>Bulgaria</p>
+              <p className={styles.contactLink}>Bulgaria</p>
             </div>
           </div>
 
@@ -20,7 +20,11 @@ export default function Info() {
               <FaPhoneAlt className={styles.icon} />
             </div>
             <div className="detail-box">
-              <p>+359 888881476</p>
+              <p>
+                <a href="tel:+359888881476" className={styles.contactLink}>
+                  +359 888881476
+                </a>
+              </p>
             </div>
           </div>
 
@@ -29,7 +33,14 @@ export default function Info() {
               <FaEnvelope className={styles.icon} />
             </div>
             <div className="detail-box">
-              <p>become.pro2024@gmail.com</p>
+              <p>
+                <a
+                  href="mailto:become.pro2024@gmail.com"
+                  className={styles.contactLink}
+                >
+                  become.pro2024@gmail.com
+                </a>
+              </p>
             </div>
           </div>
         </div>
