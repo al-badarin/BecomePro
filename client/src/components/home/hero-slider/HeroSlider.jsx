@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import styles from './HeroSlider.module.css'
+
 export default function HeroSlider() {
   return (
     <section className="slider_section position-relative">
@@ -16,7 +18,7 @@ export default function HeroSlider() {
                   <div>
                     <h3>Master the Game</h3>
                     <h2>All-Round Football Development</h2>
-                    <h1>BecomePro</h1>
+                    <span className={styles.becomePro}>BecomePro</span>
                     <p>
                       Explore comprehensive training programs, expert nutrition
                       advice, and tactical insights to elevate your football
@@ -41,7 +43,7 @@ export default function HeroSlider() {
                   <div>
                     <h3>Train Like a Pro</h3>
                     <h2>Elite Training Programs</h2>
-                    <h1>BecomePro</h1>
+                    <span className={styles.becomePro}>BecomePro</span>
                     <p>
                       Discover specialized workouts designed for football
                       players. From strength and conditioning to speed and
@@ -64,7 +66,7 @@ export default function HeroSlider() {
                   <div>
                     <h3>Fuel Your Performance</h3>
                     <h2>Nutrition for Footballers</h2>
-                    <h1>BecomePro</h1>
+                    <span className={styles.becomePro}>BecomePro</span>
                     <p>
                       Learn about the best dietary practices to fuel your body
                       and enhance recovery. Our expert guides cover everything
@@ -87,7 +89,7 @@ export default function HeroSlider() {
                   <div>
                     <h3>Mental Toughness</h3>
                     <h2>Mindset Training</h2>
-                    <h1>BecomePro</h1>
+                    <span className={styles.becomePro}>BecomePro</span>
                     <p>
                       Develop the mental resilience needed to excel in football.
                       Our resources offer strategies to boost your confidence,
@@ -110,7 +112,7 @@ export default function HeroSlider() {
                   <div>
                     <h3>Tactical Mastery</h3>
                     <h2>Understanding the Game</h2>
-                    <h1>BecomePro</h1>
+                    <span className={styles.becomePro}>BecomePro</span>
                     <p>
                       Gain deeper insights into the tactical aspects of
                       football. Our articles cover formations, strategies, and
