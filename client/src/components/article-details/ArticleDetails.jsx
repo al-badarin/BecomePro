@@ -24,35 +24,77 @@ export default function ArticleDetails() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    articleService
-      .getOne(articleId)
-      .then((result) => {
+    const fetchArticleDetails = async () => {
+      try {
+        const result = await articleService.getOne(articleId);
         setArticle(result);
-        setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error('Failed to fetch article details', err);
-        setLoading(false);
         navigate('/404');
-      });
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    likeService
-      .getLikes(articleId)
-      .then((count) => setLikeCount(count))
-      .catch((err) => console.error('Failed to fetch likes', err));
+    const fetchLikes = async () => {
+      try {
+        const count = await likeService.getLikes(articleId);
+        setLikeCount(count);
+      } catch (err) {
+        console.error('Failed to fetch likes', err);
+      }
+    };
 
+    const checkUserLike = async () => {
+      try {
+        const result = await likeService.userHasLiked(articleId, userId);
+
+        if (result.length > 0) {
+          setUserHasLiked(true);
+          setUserLikeId(result[0]._id);
+        }
+      } catch (err) {
+        console.error('Failed to check user like', err);
+      }
+    };
+
+    fetchArticleDetails();
+    fetchLikes();
     if (isAuthenticated) {
-      likeService
-        .userHasLiked(articleId, userId)
-        .then((result) => {
-          if (result.length > 0) {
-            setUserHasLiked(true);
-            setUserLikeId(result[0]._id);
-          }
-        })
-        .catch((err) => console.error('Failed to check user like', err));
+      checkUserLike();
     }
   }, [articleId, navigate, userId, isAuthenticated]);
+
+  // useEffect(() => {
+  //   articleService
+  //     .getOne(articleId)
+  //     .then((result) => {
+  //       setArticle(result);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error('Failed to fetch article details', err);
+  //       setLoading(false);
+  //       navigate('/404');
+  //     });
+
+  //   likeService
+  //     .getLikes(articleId)
+  //     .then((count) => setLikeCount(count))
+  //     .catch((err) => console.error('Failed to fetch likes', err));
+
+  //   if (isAuthenticated) {
+  //     likeService
+  //       .userHasLiked(articleId, userId)
+  //       .then((result) => {
+  //         if (result.length > 0) {
+  //           setUserHasLiked(true);
+  //           setUserLikeId(result[0]._id);
+  //         }
+  //       })
+  //       .catch((err) => console.error('Failed to check user like', err));
+  //   }
+  // }, [articleId, navigate, userId, isAuthenticated]);
 
   const toggleLikeHandler = async () => {
     if (!isAuthenticated) {
