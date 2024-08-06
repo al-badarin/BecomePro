@@ -5,10 +5,6 @@ const buildOptions = (data) => {
     },
   };
 
-  if (data) {
-    options.body = JSON.stringify(data);
-  }
-
   const token = localStorage.getItem('accessToken');
 
   if (token) {
@@ -16,6 +12,12 @@ const buildOptions = (data) => {
       ...options.headers,
       'X-Authorization': token,
     };
+  } else {
+    console.log('No token found');
+  }
+
+  if (data) {
+    options.body = JSON.stringify(data);
   }
 
   return options;
