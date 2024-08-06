@@ -1487,7 +1487,7 @@
         content:
           'Mental toughness can make a significant difference on the field. This guide explores strategies for building resilience, handling pressure, and maintaining focus during matches. Techniques such as visualization, mindfulness, and goal-setting are discussed as ways to enhance mental preparedness. The importance of positive self-talk and coping mechanisms for dealing with setbacks is also covered. The article provides insights into maintaining mental health and well-being, which are crucial for peak performance. Additionally, it explores how maintaining a positive mindset can influence teamwork and leadership qualities on the field.',
         imageUrl:
-          'https://rochemamabolo.wordpress.com/wp-content/uploads/2023/02/fpvhml2wiaimfi_.jpg',
+          'https://static.footballtransfers.com/images/cn/image/upload/g_auto,w_1200,h_900,c_fill/footballcritic/y6ppa7clbrq2mjoml7vh.webp',
         _createdOn: Date.now(),
       },
       'f6g7h8i9-j0k1-2345-6789-012345abcdef': {
