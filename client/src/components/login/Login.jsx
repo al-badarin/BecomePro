@@ -98,11 +98,12 @@ export default function Login() {
                 </div>
 
                 {/* SUBMIT BUTTON */}
-                <input
+                <button
                   type="submit"
                   className={`btn ${styles.btnSubmit} mt-3`}
-                  value="Login"
-                />
+                >
+                  Login
+                  </button>
               </form>
               <div className="mt-3">
                 <p>

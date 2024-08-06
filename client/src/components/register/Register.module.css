@@ -27,6 +27,7 @@
   }
   
   .btnSubmit {
+    width: 100%;
     background-color: #522633;
     border: none;
     border-radius: 5px;
