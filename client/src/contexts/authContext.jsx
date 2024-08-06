@@ -12,6 +12,8 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   const loginSubmitHandler = async (values) => {
+    setError(null);
+
     try {
       const result = await authService.login(values.email, values.password);
 
