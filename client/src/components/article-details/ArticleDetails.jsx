@@ -116,7 +116,7 @@ export default function ArticleDetails() {
           <button onClick={toggleLikeHandler} className={styles.likeButton}>
             {userHasLiked ? 'Unlike' : 'Like'}
           </button>
-          <span>
+          <span className={styles.likeCount}>
             {likeCount} {likeCount === 1 ? 'Like' : 'Likes'}
           </span>
         </div>
