@@ -156,12 +156,12 @@ export default function Register() {
                   ) : null}
                 </div>
 
-                <button
+                <input
                   type="submit"
                   className={`btn ${styles.btnSubmit} mt-3`}
-                >
-                  Register
-                </button>
+                  value="Register"
+                />
+                
               </form>
               <div className="mt-3">
                 <p>
