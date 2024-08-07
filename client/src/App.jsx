@@ -29,7 +29,6 @@ const App = () => {
       <AuthProvider>
         <main className={styles.main}>
           <Header />
-          <h1>BecomePro</h1>
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -47,7 +46,9 @@ const App = () => {
             <Route element={<AuthGuard />}>
               <Route path="/articles/create" element={<ArticleCreate />} />
               <Route
-                path="/articles/:articleId/edit" element={<ArticleEdit />} />
+                path="/articles/:articleId/edit"
+                element={<ArticleEdit />}
+              />
               <Route path="/logout" element={<Logout />} />
             </Route>
 
