@@ -58,6 +58,18 @@ export default function ArticleDetails() {
       }
     };
 
+    // *Unmount demo scenario*
+    // // Setup a timer when the component mounts
+    // const timerId = setInterval(() => {
+    //   console.log('ArticleDetails component is still mounted.');
+    // }, 1000);
+
+    // // Cleanup function to clear the timer when the component unmounts
+    // return () => {
+    //   clearInterval(timerId);
+    //   console.log('ArticleDetails component unmounted. Timer cleared.');
+    // };
+
     fetchArticleDetails();
     fetchLikes();
     if (isAuthenticated) {
