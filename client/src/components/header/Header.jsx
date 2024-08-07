@@ -53,7 +53,7 @@ export default function Header() {
           </button>
 
           <div
-            className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`}
+            className={`${headerStyle} collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`}
             id="navbarSupportedContent"
           >
             <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
