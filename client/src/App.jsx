@@ -29,6 +29,7 @@ const App = () => {
       <AuthProvider>
         <main className={styles.main}>
           <Header />
+          <h1>BecomePro</h1>
 
           <Routes>
             <Route path="/" element={<Home />} />
