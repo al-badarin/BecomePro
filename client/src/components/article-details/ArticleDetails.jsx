@@ -108,7 +108,9 @@ export default function ArticleDetails() {
   //   }
   // }, [articleId, navigate, userId, isAuthenticated]);
 
-  const toggleLikeHandler = async () => {
+  const toggleLikeHandler = async (e) => {
+    e.preventDefault();
+
     if (!isAuthenticated) {
       toast.error('You need to be logged in to like articles.');
       navigate('/login');
