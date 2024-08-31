@@ -63,6 +63,7 @@ Welcome to the BecomePro project repository. BecomePro is a comprehensive platfo
   <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" />
   <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub" />
   <img src="https://img.icons8.com/color/48/000000/npm.png" alt="NPM" />
+  <img src="https://img.icons8.com/color/48/000000/firebase.png" alt="Firebase" />
   <!-- <img src="https://img.icons8.com/color/48/000000/heroku.png" alt="Heroku" /> -->
 </p>
 
