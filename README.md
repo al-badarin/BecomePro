@@ -2,6 +2,8 @@
 
 Welcome to the BecomePro project repository. BecomePro is a comprehensive platform designed for football players and enthusiasts to enhance their training, nutrition, mental toughness, and overall performance. Our mission is to provide valuable resources and support for football players at all levels.
 
+![Website Home Page Screenshot](./image.png)
+
 ## Table of Contents
 
 - [Features](#features)
